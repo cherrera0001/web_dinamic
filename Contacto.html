@@ -78,19 +78,43 @@
         <div class="footer-bg">
             <h2>Reservar un Servicio</h2>
 
-            <form>
+            <form id="contactForm">
                 <div class="campo-1">
-                    <input class="campo" type="text" placeholder="Rut">
-                    <input class="campo" type="text" placeholder="Nombre">
+                  <input class="campo" type="text" name="rut" placeholder="Rut" required>
+                  <input class="campo" type="text" name="nombre" placeholder="Nombre" required>
                 </div>
-                <div class="campo-1">                  
-                    <input class="campo" type="number" placeholder="Telefono">
-                    <input class="campo" type="email" placeholder="Correo">
+                <div class="campo-1">
+                  <input class="campo" type="number" name="telefono" placeholder="Telefono" required>
+                  <input class="campo" type="email" name="correo" placeholder="Correo" required>
                 </div>
-                <textarea class="campo" cols="30" rows="10" placeholder="Ingrese el servicio que desea tener..."></textarea>
-                <input type="submit" value="Enviar" class="btn-2">
-            </form>
-        </div>
+                <textarea class="campo" name="mensaje" cols="30" rows="10" placeholder="Ingrese el servicio que desea tener..." required></textarea>
+                <button type="submit" class="btn-2">Enviar</button>
+              </form>
+              
+              <script>
+                document.getElementById('contactForm').addEventListener('submit', async (e) => {
+                  e.preventDefault();
+                  const formData = new FormData(e.target);
+                  const data = Object.fromEntries(formData.entries());
+              
+                  try {
+                    const response = await fetch('http://localhost:3000/contacto', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify(data),
+                    });
+              
+                    if (response.ok) {
+                      alert('Mensaje enviado con éxito.');
+                      e.target.reset();
+                    } else {
+                      alert('Error al enviar el mensaje.');
+                    }
+                  } catch (error) {
+                    alert('Error de conexión con el servidor.');
+                  }
+                });
+              </script>
 
         
         <div class="footer-txt">
