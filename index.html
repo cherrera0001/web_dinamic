@@ -131,14 +131,14 @@
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('show'); // Añade la clase que activa la animación
-                        observer.unobserve(entry.target); // Deja de observar después de que el elemento haya aparecido
+                        entry.target.classList.add('show'); // añade la clase para mostrar la tarjeta 
+                        observer.unobserve(entry.target); // se deja de observar despues que se haya visto la tarjeta 
                     }
                 });
             });
         
             boxes.forEach(box => {
-                observer.observe(box); // Observa cada tarjeta
+                observer.observe(box); // ayuda a observar la tarjeta 
             });
         });
     </script>
