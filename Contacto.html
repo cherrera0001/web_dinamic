@@ -75,7 +75,7 @@
     </div>
     
     
-    <footer>
+    <body>
         <div class="footer-bg">
             <h2>Reservar un Servicio</h2>
 
@@ -91,34 +91,45 @@
                 <textarea class="campo" name="mensaje" cols="30" rows="10" placeholder="Ingrese el servicio que desea tener..." required></textarea>
                 <button type="submit" class="btn-2">Enviar</button>
               </form>
-              
-              <script>
-                document.getElementById('contactForm').addEventListener('submit', async (e) => {
-                  e.preventDefault();
-                  const formData = new FormData(e.target);
-                  const data = Object.fromEntries(formData.entries());
-              
-                  try {
-                    const response = await fetch('http://localhost:3000/contacto', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify(data),
-                    });
-              
-                    if (response.ok) {
-                      alert('Mensaje enviado con éxito.');
-                      e.target.reset();
-                    } else {
-                      alert('Error al enviar el mensaje.');
-                    }
-                  } catch (error) {
-                    alert('Error de conexión con el servidor.');
-                  }
-                });
-              </script>
 
+              <script>
+                document.getElementById('contactForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+        
+                    const formData = new FormData(event.target);
+                    const data = {
+                        nombre: formData.get('nombre'),
+                        rut: formData.get('rut'),
+                        telefono: formData.get('telefono'),
+                        correo: formData.get('correo'),
+                        mensaje: formData.get('mensaje')
+                    };
+        
+                    fetch('http://localhost:3000/contacto', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                        alert('Mensaje enviado correctamente.');
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        alert('Error al enviar el mensaje.');
+                    });
+                });
+            </script>
+
+    </body>          
+              
+    <footer>
         
         <div class="footer-txt">
+
             <p>
                 @Todos los derechos reservados 
             </p>

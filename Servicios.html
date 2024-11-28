@@ -165,8 +165,8 @@
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('show'); // Añade la clase que activa la animación
-                        observer.unobserve(entry.target); // Deja de observar después de que el elemento haya aparecido
+                        entry.target.classList.add('show'); 
+                        observer.unobserve(entry.target); 
                     }
                 });
             });
