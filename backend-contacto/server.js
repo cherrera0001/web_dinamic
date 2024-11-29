@@ -37,7 +37,7 @@ function enviarCorreo({ nombre, rut, telefono, correo, mensaje }) {
   });
 
   const mailOptions = {
-    from: 'walterxd69@gmail.com',
+    from: 'pruebabackend123@gmail.com',
     to: 'walterxd69@gmail.com', // Cambia esto por el correo donde recibes los mensajes
     subject: 'Nuevo Mensaje de Contacto',
     text: `
