@@ -10,9 +10,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@firebase/firestore": "^4.7.5",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "express": "^4.21.1",
+    "firebase": "^11.0.2",
+    "firebase-admin": "^13.0.1",
     "mongoose": "^8.8.2",
     "nodemailer": "^6.9.16"
   }
