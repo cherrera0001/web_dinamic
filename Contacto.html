@@ -81,12 +81,12 @@
 
             <form id="contactForm">
                 <div class="campo-1">
-                  <input class="campo" type="text" name="rut" placeholder="Rut" required>
                   <input class="campo" type="text" name="nombre" placeholder="Nombre" required>
+                  <input class="campo" type="tel" name="telefono" placeholder="Teléfono" required>
                 </div>
                 <div class="campo-1">
-                  <input class="campo" type="number" name="telefono" placeholder="Telefono" required>
                   <input class="campo" type="email" name="correo" placeholder="Correo" required>
+                  <input class="campo" type="email" name="confirmarCorreo" placeholder="Confirmar Correo" required>
                 </div>
                 <textarea class="campo" name="mensaje" cols="30" rows="10" placeholder="Ingrese el servicio que desea tener..." required></textarea>
                 <button type="submit" class="btn-2">Enviar</button>
@@ -95,15 +95,20 @@
               <script>
                 document.getElementById('contactForm').addEventListener('submit', function(event) {
                     event.preventDefault();
-        
+
                     const formData = new FormData(event.target);
                     const data = {
                         nombre: formData.get('nombre'),
-                        rut: formData.get('rut'),
-                        telefono: formData.get('telefono'),
                         correo: formData.get('correo'),
+                        confirmarCorreo: formData.get('confirmarCorreo'),
+                        telefono: formData.get('telefono'),
                         mensaje: formData.get('mensaje')
                     };
+
+                    if (data.correo !== data.confirmarCorreo) {
+                        alert('Los correos electrónicos no coinciden.');
+                        return;
+                    }
         
                     fetch('http://localhost:3000/contacto', {
                         method: 'POST',

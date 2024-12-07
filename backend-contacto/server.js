@@ -13,9 +13,9 @@ app.use(cors());
 
 // Ruta para manejar la recepción de datos del formulario de contacto
 app.post('/contacto', async (req, res) => {
-  const { nombre, rut, telefono, correo, mensaje } = req.body;
+  const { nombre, correo, confirmarCorreo, telefono, mensaje } = req.body;
 
-  if (!nombre || !rut || !telefono || !correo || !mensaje) {
+  if (!nombre || !correo || !confirmarCorreo || !telefono || !mensaje) {
     return res.status(400).json({ message: 'Todos los campos son obligatorios.' });
   }
 
@@ -23,9 +23,8 @@ app.post('/contacto', async (req, res) => {
     // Guarda los datos en Firestore
     await addDoc(collection(db, 'contactos'), {
       nombre,
-      rut,
-      telefono,
       correo,
+      telefono,
       mensaje,
       timestamp: new Date()
     });
