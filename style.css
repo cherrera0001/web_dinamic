@@ -613,7 +613,7 @@ th:hover::after {
 
 /* Parte del Contacto */
 
-.footer-bg {
+.FormaContact {
     background-image: url(images/fin.webp);
     background-position: center center;
     background-repeat: no-repeat;
@@ -661,13 +661,9 @@ textarea {
     width: 520px !important;
 }
 
-.footer-txt {
-    text-align: center;
-    padding: 10px;
-    background-color: #070707;
-}
 
-.footer-bg h2 {
+
+.FormaContact h2 {
     font-size: 80px;
     line-height: 100px;
     color: #FFFFFF;
@@ -679,12 +675,12 @@ textarea {
     transition: color 0.4s ease, transform 0.4s ease; /* Transición suave para color y escala */
 }
 
-.footer-bg h2:hover {
+.FormaContact h2:hover {
     color: #CF2D3A; /* Cambia el color al pasar el ratón */
     transform: scale(1.05); /* Aumenta ligeramente el tamaño */
 }
 
-.footer-bg h2::after {
+.FormaContact h2::after {
     content: '';
     display: block;
     width: 60px;
@@ -694,7 +690,7 @@ textarea {
     transition: width 0.4s ease;
 }
 
-.footer-bg h2:hover::after {
+.FormaContact h2:hover::after {
     width: 120px; /* La línea se expande al pasar el cursor */
 }
 
@@ -1202,7 +1198,7 @@ hr {
     max-width: 400px;
 }
 
-.footer-bg h2 {
+.FormaContact h2 {
     font-size: 80px;
     line-height: 100px;
     color: #FFFFFF;
@@ -1214,12 +1210,12 @@ hr {
     transition: color 0.4s ease, transform 0.4s ease; /* Transición suave para color y escala */
 }
 
-.footer-bg h2:hover {
+.FormaContact h2:hover {
     color: #CF2D3A; /* Cambia el color al pasar el ratón */
     transform: scale(1.05); /* Aumenta ligeramente el tamaño */
 }
 
-.footer-bg h2::after {
+.FormaContact h2::after {
     content: '';
     display: block;
     width: 60px;
@@ -1229,10 +1225,74 @@ hr {
     transition: width 0.4s ease;
 }
 
-.footer-bg h2:hover::after {
+.FormaContact h2:hover::after {
     width: 120px; /* La línea se expande al pasar el cursor */
 }
 
+
+
+
+/* New Footer*/
+
+
+.footer-bg {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 50px 20px;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #CF2D3A; /* Cambia a rojo al pasar el ratón */
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+    color: #aaa;
+}
 
 
 
