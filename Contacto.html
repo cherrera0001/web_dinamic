@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -6,12 +5,11 @@
     <title>Document</title>
     <title>C4A</title>
     <link rel="stylesheet" href="style.css">
-    
+    <!-- reCAPTCHA v3 --> 
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdirpYqAAAAAOSFX6F50RMFkSEhctWQi7fC1lL91"></script>
 </head>
 <body>
-
     <header class="header">
-
         <div class="menu container">
             <img src="images/logo.svg" class="logoo" alt="">
             <input type="checkbox" id="menu">
@@ -27,7 +25,6 @@
                 </ul>
             </nav>
         </div>
-
         <div class="header-content container">
             <div class="header-txt">
                 <h1>C4A</h1>
@@ -56,7 +53,6 @@
             </div>
         </div>
     </header>
-
     <div class="contact">
         <div class="contact-1">
             <h2>Contáctenos</h2>
@@ -72,56 +68,65 @@
         <div class="contact-2">       
         </div>
     </div>
-    <body>
-        <div class="FormaContact">
-            <h2>Reservar un Servicio</h2>
-            <form id="contactForm">
-                <div class="campo-1">
-                  <input class="campo" type="text" name="nombre" placeholder="Nombre" required>
-                  <input class="campo" type="tel" name="telefono" placeholder="Teléfono" required>
-                </div>
-                <div class="campo-1">
-                  <input class="campo" type="email" name="correo" placeholder="Correo" required>
-                  <input class="campo" type="email" name="confirmarCorreo" placeholder="Confirmar Correo" required>
-                </div>
-                <textarea class="campo" name="mensaje" cols="30" rows="10" placeholder="Ingrese el servicio que desea tener..." required></textarea>
-                <button type="submit" class="btn-2">Enviar</button>
-              </form>
-              <script>
-                document.getElementById('contactForm').addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    const formData = new FormData(event.target);
-                    const data = {
-                        nombre: formData.get('nombre'),
-                        correo: formData.get('correo'),
-                        confirmarCorreo: formData.get('confirmarCorreo'),
-                        telefono: formData.get('telefono'),
-                        mensaje: formData.get('mensaje')
-                    };
-                    if (data.correo !== data.confirmarCorreo) {
-                        alert('Los correos electrónicos no coinciden.');
-                        return;
-                    }       
-                    fetch('http://localhost:3000/contacto', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(data)
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('Success:', data);
-                        alert('Mensaje enviado correctamente.');
-                    })
-                    .catch((error) => {
-                        console.error('Error:', error);
-                        alert('Error al enviar el mensaje.');
+    <div class="FormaContact">
+        <h2>Reservar un Servicio</h2>
+        <form id="contactForm">
+            <div class="campo-1">
+                <input class="campo" type="text" name="nombre" placeholder="Nombre" required>
+                <input class="campo" type="tel" name="telefono" placeholder="Teléfono" required>
+            </div>
+            <div class="campo-1">
+                <input class="campo" type="email" name="correo" placeholder="Correo" required>
+                <input class="campo" type="email" name="confirmarCorreo" placeholder="Confirmar Correo" required>
+            </div>
+            <textarea class="campo" name="mensaje" cols="30" rows="10" placeholder="Ingrese el servicio que desea tener..." required></textarea>
+            <!-- Token de captcha -->
+            <input class="campo" type="hidden" name="recaptchaToken" id="recaptchaToken">
+            <button type="submit" class="btn-2">Enviar</button>
+        </form>
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Ejecutar reCAPTCHA y obtener el token
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LdirpYqAAAAAOSFX6F50RMFkSEhctWQi7fC1lL9', { action: 'submit' }).then(function(token) {
+                        // Agregar el token al campo oculto
+                        document.getElementById('recaptchaToken').value = token;
+                        const formData = new FormData(event.target);
+                        const data = {
+                            nombre: formData.get('nombre'),
+                            correo: formData.get('correo'),
+                            confirmarCorreo: formData.get('confirmarCorreo'),
+                            telefono: formData.get('telefono'),
+                            mensaje: formData.get('mensaje'),
+                            recaptchaToken: formData.get('recaptchaToken')
+                        };
+                        if (data.correo !== data.confirmarCorreo) {
+                            alert('Los correos electrónicos no coinciden.');
+                            return;
+                        }
+                        fetch('http://localhost:3000/contacto', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('Success:', data);
+                            alert('Mensaje enviado correctamente.');
+                        })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                            alert('Error al enviar el mensaje.');
+                        });
                     });
                 });
-            </script>
-    </body>          
-   <footer class="footer-bg">
+            });
+        </script>
+    </div>
+    <footer class="footer-bg">
         <div class="footer-container">
             <div class="footer-section">
                 <img src="images/logo.svg" alt="C4A Logo" class="footer-logo">
@@ -139,7 +144,6 @@
                 <h3>Servicios</h3>
                 <ul>
                     <li>Ciberseguridad Ofensiva</li>
-                   
                 </ul>
             </div>
             <div class="footer-section">
@@ -150,7 +154,6 @@
                     <li>Correo: C4A@gmail.com</li>
                     <li>Horario: Lunes a Viernes, 9:00 AM - 6:00 PM</li>
                 </ul>
-                
             </div>
         </div>
         <div class="footer-bottom">
