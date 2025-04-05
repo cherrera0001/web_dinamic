@@ -1,232 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <title>C4A</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kit de Madurez Digital - C4A</title>
+  <meta name="description" content="Diagnostica gratis el nivel de madurez digital en ciberseguridad de tu empresa. Descarga nuestro Kit de Evaluación.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="header">
+    <div class="menu container">
+      <img src="images/logo.svg" class="logoo" alt="Logo C4A">
+      <input type="checkbox" id="menu">
+      <label for="menu">
+        <img src="images/menu.png" class="menu-icono" alt="Menú">
+      </label>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="Servicios.html">Servicios</a></li>
+          <li><a href="Contacto.html">Contacto</a></li>
+          <li><a href="kit.html" class="btn-menu active">Kit</a></li>
+        </ul>
+      </nav>
+    </div>
 
-    <header class="header">
+    <div class="header-content container">
+      <h1>Kit de Madurez Digital</h1>
+      <p>Evalúa gratis la madurez en ciberseguridad de tu empresa y descubre tus oportunidades de mejora.</p>
+      <a href="#descarga" class="btn-1">Descargar Kit Básico</a>
+    </div>
+  </header>
 
-        <div class="menu container">
-            <img src="images/logo_c.png" class="logoo" alt="">
-            <input type="checkbox" id="menu">
-            <label for="menu">
-                <img src="images/menu.png" class="menu-icono" alt="">
-            </label>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="Sobre Nosotros.html">Sobre Nosotros</a></li>
-                    <li><a href="Servicios.html">Servicios</a></li>
-                    <li><a href="Contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <div class="header-content container">
-            <div class="header-txt">
-                <h1>C4A</h1>
-                <span>Chile</span>
-                <p>
-                    Nos especializamos en ciberseguridad ofensiva, utilizando hacking ético 
-                    para proteger sistemas y datos. 
-                    Evaluamos y aseguramos la seguridad de APIs, sitios web, aplicaciones móviles y redes, 
-                    además de ofrecer capacitaciones para mejorar la defensa ante ciberataques.
-                 </p>
-                <a href="#" class="btn-1">Información</a>
-            </div>
-            <div class="header-dir">
-                <div class="dir">
-                    <h3>Dirección</h3>
-                    <p>Chillán</p>
-                </div>
-                <div class="dir">
-                    <h3>Teléfono</h3>
-                    <p>+59955338899</p>
-                </div>
-                <div class="dir">
-                    <h3>Horario</h3>
-                    <p>9am a 9pm</p>                  
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section class="cib">
-
-        <div class="cib-1">
-
-            <h2>¿Que es la Ciberseguridad Ofensiva?</h2>
-
-            <p>
-                La ciberseguridad ofensiva se enfoca en detectar 
-                de manera proactiva las vulnerabilidades en los 
-                sistemas. Los profesionales de ciberseguridad
-                ofensiva emplean las mismas técnicas y herramientas
-                que los atacantes maliciosos, pero con una 
-                finalidad diferente. Mientras que los hackers
-                buscan explotar las debilidades para obtener 
-                acceso no autorizado o causar daño, 
-                los especialistas en ciberseguridad ofensiva 
-                identifican estas fallas para fortalecer las 
-                defensas. Nuestro equipo puede analizar sus 
-                sistemas, identificar vulnerabilidades no 
-                descubiertas y evaluar sus políticas de 
-                seguridad para prevenir posibles ataques externos.
-            </p>
-        </div>
-
-        <div class="cib-2"></div>
+  <main class="container">
+    <section class="kit-intro">
+      <h2>¿Qué es el Kit de Madurez Digital?</h2>
+      <p>Es una herramienta desarrollada por C4A que permite a empresas, especialmente pymes y startups, conocer su nivel de madurez en seguridad digital. Está basado en buenas prácticas y frameworks como ISO 27001 y el Modelo de Madurez de Seguridad de C4A.</p>
     </section>
 
-    <section class="ofe">
-
-        <div class="ofe-1"></div>
-
-        <div class="ofe-2">
-
-            <h2>¿la ciberseguridad ofensiva vs la ciberseguridad Defensiva?</h2>
-
-            <p>
-                La ciberseguridad defensiva se enfoca en realizar 
-                un análisis detallado del sistema y aplicar 
-                medidas preventivas que protejan sus activos de 
-                posibles amenazas externas. El objetivo principal
-                es construir una barrera sólida que pueda 
-                resistir ciberataques y prevenir futuros 
-                intentos.
-
-                Aunque las defensas son esenciales 
-                para una estrategia de ciberseguridad efectiva,
-                no son suficientes por sí solas para proteger 
-                completamente a su organización. Los controles
-                regulares están diseñados para detectar 
-                amenazas conocidas, pero solo las operaciones
-                ofensivas en ciberseguridad pueden abordar
-                riesgos complejos y  vulnerabilidades no
-                descubiertas.
-            </p>
+    <section class="kit-opciones" id="descarga">
+      <h2>Elige tu versión</h2>
+      <div class="kit-cards">
+        <div class="kit-card">
+          <h3>Kit Básico</h3>
+          <p>Diagnóstico gratuito y autoaplicado en formato Excel. Ideal para tener una primera aproximación.</p>
+          <ul>
+            <li>✅ 7 dominios clave</li>
+            <li>✅ Puntaje automático</li>
+            <li>✅ Recomendaciones generales</li>
+          </ul>
+          <a href="docs/Kit_Basico_C4A.xlsx" download class="btn-cta">Descargar Kit Básico</a>
         </div>
+        <div class="kit-card">
+          <h3>Kit Mediano</h3>
+          <p>Incluye diagnóstico acompañado por nuestro equipo, con análisis más profundo y orientado a resultados.</p>
+          <ul>
+            <li>✅ Evaluación personalizada</li>
+            <li>✅ Informe con insights y plan de mejora</li>
+            <li>✅ Reunión de devolución incluida</li>
+          </ul>
+          <a href="Contacto.html?servicio=kit-mediano" class="btn-cta">Solicitar Kit Mediano</a>
+        </div>
+      </div>
     </section>
 
-    <main class="serv container">
-        <div class="serv-txt">
-            <h2>Nuestras operaciones ofensivas que tenemos</h2>
-            <hr>
-            <p>
-                La empresa se especializa en ciberseguridad ofensiva, 
-                protegiendo sistemas y 
-                datos de sus clientes mediante hacking ético
-                 y estrategias avanzadas.
-            </p>
-        </div>
-        <divc class="serv-group">
-            <div class="serv-1">
-                <img src="images/ic1.png" alt="">
-                <h3>Pentesting</h3>
-                <p>
-                    es una prueba de seguridad en la que expertos intentan
-                     hackear un sistema como lo harían los atacantes reales.
-                </p>
-                
-            </div>
-            <div class="serv-1">
-                <img src="images/ic2.png" alt="">
-                <h3>Red Teaming</h3>
-                <p>
-                    es un ejercicio en el que un grupo simula un ataque real a la organización, 
-                    usando tácticas de ciberdelincuentes
-                </p>
-                
-            </div>
-            <div class="serv-1">
+    <section class="kit-beneficios">
+      <h2>¿Qué obtienes con este diagnóstico?</h2>
+      <ul>
+        <li>📊 Visibilidad real sobre el estado de tu ciberseguridad.</li>
+        <li>🔍 Detección de áreas críticas a fortalecer.</li>
+        <li>🛠️ Recomendaciones claras y accionables.</li>
+        <li>📈 Base para definir una estrategia de mejora.</li>
+      </ul>
+    </section>
+  </main>
 
-                <img src="images/ic3.png" alt="">
-                <h3>Analisis de Vulnerabilidades</h3>
-                <p>
-                    es un proceso donde se escanean los sistemas en busca de fallos o 
-                    debilidades que puedan ser explotados por atacantes. 
-                </p>
-                
-                
-            </div>
-        </div>
-    
-    
-            <div class="serv-1">
-                <img src="images/ic4.png" alt="">
-                <h3>Diagnóstico de Madurez</h3>
-                <p>
-                    Evalúa en qué nivel está tu empresa con nuestro kit gratuito de madurez digital.  
-                </p>
-                <a href="https://c4a-kit-landing.pages.dev" class="btn-1">Ir al Kit de Madurez</a>
-            </div>
-</main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const boxes = document.querySelectorAll('.serv-1');
-            
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('show'); 
-                        observer.unobserve(entry.target); 
-                    }
-                });
-            });
-        
-            boxes.forEach(box => {
-                observer.observe(box); // Observa cada tarjeta
-            });
-        });
-        </script>
-        
-
-    
-
-        <footer class="footer-bg">
-            <div class="footer-container">
-                <div class="footer-section">
-                    <img src="images/logo_c.png" alt="C4A Logo" class="footer-logo">
-                </div>
-                <div class="footer-section">
-                    <h3>Links Rápidos</h3>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="Sobre Nosotros.html">Sobre Nosotros</a></li>
-                        <li><a href="Servicios.html">Servicios</a></li>
-                        <li><a href="Contacto.html">Contáctenos</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Servicios</h3>
-                    <ul>
-                        <li>Ciberseguridad Ofensiva</li>
-                       
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contacto</h3>
-                    <ul>
-                        <li>Dirección: Chillán, Chile</li>
-                        <li>Teléfono: +56955338899</li>
-                        <li>Correo: contacto@c4a.cl</li>
-                        <li>Horario: Lunes a Viernes</li>
-                    </ul>
-                  
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 C4A. Todos los derechos reservados.</p>
-            </div>
-        </footer>
-
-   
- 
+  <footer class="footer-bg">
+    <div class="footer-container">
+      <div class="footer-section">
+        <img src="images/logo.svg" alt="C4A Logo" class="footer-logo">
+      </div>
+      <div class="footer-section">
+        <h3>Servicios</h3>
+        <ul>
+          <li><a href="Servicios.html#pentesting">Pentesting</a></li>
+          <li><a href="Servicios.html#redteam">Red Teaming</a></li>
+          <li><a href="Servicios.html#vulnerabilidades">Análisis de Vulnerabilidades</a></li>
+          <li><a href="kit.html">Kit de Madurez</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <ul>
+          <li>Chillán, Chile</li>
+          <li>+569 55338899</li>
+          <li>contacto@c4a.cl</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 C4A. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 </body>
 </html>
