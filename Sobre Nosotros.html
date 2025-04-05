@@ -5,96 +5,169 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre Nosotros - C4A</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0e0e0e;
+      color: #fff;
+    }
+    .hero-sobre {
+      padding: 120px 20px 80px;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("images/team-hero.webp") center/cover no-repeat;
+    }
+    .hero-sobre h1 {
+      font-size: 3.5rem;
+      color: #00DFA2;
+      font-family: 'Bebas Neue', cursive;
+    }
+    .hero-sobre p {
+      max-width: 700px;
+      margin: 20px auto 0;
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .sobre-section {
+      padding: 80px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 60px;
+      background-color: #111;
+    }
+
+    .sobre-block {
+      flex: 1 1 300px;
+      max-width: 500px;
+    }
+
+    .sobre-block h2 {
+      color: #00DFA2;
+      font-size: 2rem;
+      font-family: 'Bebas Neue', cursive;
+      margin-bottom: 15px;
+    }
+
+    .sobre-block p {
+      font-size: 1rem;
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    .valores {
+      background-color: #0e0e0e;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .valores h2 {
+      color: #00DFA2;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .valores-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .valor {
+      background-color: #1a1a1a;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .valor:hover {
+      transform: scale(1.05);
+    }
+
+    .valor h3 {
+      color: #00DFA2;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .valor p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    .cta-final {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #111;
+    }
+
+    .cta-final h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-family: 'Bebas Neue', cursive;
+    }
+
+    .cta-final a {
+      background-color: #00DFA2;
+      color: #0e0e0e;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.2rem;
+      border-radius: 6px;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="menu container">
-      <img src="images/logo.svg" class="logoo" alt="Logo C4A">
-      <input type="checkbox" id="menu">
-      <label for="menu">
-        <img src="images/menu.png" class="menu-icono" alt="Menú">
-      </label>
-      <nav class="navbar">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="Servicios.html">Servicios</a></li>
-          <li><a href="Contacto.html">Contacto</a></li>
-          <li><a href="kit.html" class="btn-menu">Kit</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="header-content container">
-      <h1>Sobre Nosotros</h1>
-      <p>Conoce la misión, visión y valores que impulsan nuestro compromiso con la ciberseguridad ofensiva en Chile.</p>
-    </div>
-  </header>
+  <section class="hero-sobre">
+    <h1>Ciberseguridad con Propósito</h1>
+    <p>Desde Chile hacia Latinoamérica, impulsamos la madurez digital de quienes construyen el futuro.</p>
+  </section>
 
-  <main class="container">
-    <section class="nosotros-equipo">
-      <h2>Nuestra Historia</h2>
-      <p>C4A (Ciberseguridad For All) nace con la misión de democratizar el acceso a servicios avanzados de ciberseguridad ofensiva para empresas en crecimiento, startups y pymes en Chile y Latinoamérica. Nuestro equipo está formado por especialistas con certificaciones internacionales y experiencia en sectores críticos.</p>
-    </section>
-
-    <section class="nosotros-mision">
+  <section class="sobre-section">
+    <div class="sobre-block">
       <h2>Misión</h2>
-      <p>Proteger sistemas y datos mediante servicios de hacking ético y simulaciones de ataque que revelan debilidades antes que los ciberdelincuentes lo hagan.</p>
-    </section>
-
-    <section class="nosotros-vision">
+      <p>Empoderar a empresas y organizaciones mediante servicios de ciberseguridad ofensiva, educativa y aplicada, accesibles para todo tipo de equipos.</p>
+    </div>
+    <div class="sobre-block">
       <h2>Visión</h2>
-      <p>Ser referentes en ciberseguridad ofensiva en Hispanoamérica, impulsando una cultura preventiva y resiliente frente a amenazas digitales.</p>
-    </section>
+      <p>Ser referentes en América Latina como aliados estratégicos en la madurez digital, el desarrollo seguro y la protección de activos digitales.</p>
+    </div>
+  </section>
 
-    <section class="nosotros-valores">
-      <h2>Valores</h2>
-      <ul>
-        <li>🔐 Ética Profesional</li>
-        <li>📚 Actualización Continua</li>
-        <li>🧑‍🤝‍🧑 Enfoque en las personas</li>
-        <li>🎯 Compromiso con resultados</li>
-        <li>🌍 Confidencialidad y responsabilidad social</li>
-      </ul>
-    </section>
-
-    <section class="nosotros-cert">
-      <h2>Certificaciones y Experiencia</h2>
-      <p>Contamos con profesionales certificados en:</p>
-      <ul>
-        <li>✔️ OSCP (Offensive Security Certified Professional)</li>
-        <li>✔️ CEH (Certified Ethical Hacker)</li>
-        <li>✔️ CompTIA Security+</li>
-        <li>✔️ ISO 27001 Auditor Interno</li>
-      </ul>
-      <p>Hemos colaborado con sectores de tecnología, salud, educación y finanzas, ofreciendo soluciones adaptadas al contexto local y normativas de ciberseguridad.</p>
-    </section>
-  </main>
-
-  <footer class="footer-bg">
-    <div class="footer-container">
-      <div class="footer-section">
-        <img src="images/logo.svg" alt="C4A Logo" class="footer-logo">
+  <section class="valores">
+    <h2>Nuestros Valores</h2>
+    <div class="valores-grid">
+      <div class="valor">
+        <h3>Ética Primero</h3>
+        <p>Actuamos con responsabilidad y principios claros en todo lo que hacemos.</p>
       </div>
-      <div class="footer-section">
-        <h3>Servicios</h3>
-        <ul>
-          <li><a href="Servicios.html#pentesting">Pentesting</a></li>
-          <li><a href="Servicios.html#redteam">Red Teaming</a></li>
-          <li><a href="Servicios.html#vulnerabilidades">Análisis de Vulnerabilidades</a></li>
-          <li><a href="kit.html">Kit de Madurez</a></li>
-        </ul>
+      <div class="valor">
+        <h3>Transparencia</h3>
+        <p>Comunicamos con claridad, sin jerga ni tecnicismos innecesarios.</p>
       </div>
-      <div class="footer-section">
-        <h3>Contacto</h3>
-        <ul>
-          <li>Chillán, Chile</li>
-          <li>+569 55338899</li>
-          <li>contacto@c4a.cl</li>
-        </ul>
+      <div class="valor">
+        <h3>Educación</h3>
+        <p>Creemos en el poder de transferir conocimiento como motor de cambio.</p>
+      </div>
+      <div class="valor">
+        <h3>Excelencia Técnica</h3>
+        <p>Nos actualizamos, auditamos y exigimos calidad en cada servicio.</p>
+      </div>
+      <div class="valor">
+        <h3>Accesibilidad</h3>
+        <p>La seguridad debe estar al alcance de todos, no sólo de corporaciones.</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 C4A. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+  </section>
+
+  <section class="cta-final">
+    <h2>¡Queremos proteger tu proyecto!</h2>
+    <a href="/Contacto.html">Contáctanos</a>
+  </section>
 </body>
 </html>

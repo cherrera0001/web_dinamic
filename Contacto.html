@@ -1,74 +1,137 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto - C4A</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #1f1f1f;
+      color: #ccc;
+    }
+    .contacto-hero {
+      background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('images/contact-hero.webp') center/cover no-repeat;
+      padding: 100px 20px;
+      text-align: center;
+      color: #fff;
+    }
+    .contacto-hero h1 {
+      font-size: 3.5rem;
+      font-family: 'Bebas Neue', cursive;
+      color: #CF2D3A;
+      margin-bottom: 10px;
+    }
+    .contacto-hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contacto-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 60px 20px;
+      background-color: #191919;
+    }
+    .formulario-contacto {
+      flex: 1 1 400px;
+      max-width: 500px;
+      background-color: #0e0e0e;
+      padding: 40px;
+      border-radius: 10px;
+    }
+    .formulario-contacto h2 {
+      font-family: 'Bebas Neue', cursive;
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 15px;
+      background-color: #1f1f1f;
+      border: 1px solid #CF2D3A;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1rem;
+    }
+    form input[type="submit"] {
+      background-color: #CF2D3A;
+      color: #fff;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form input[type="submit"]:hover {
+      background-color: #B4272E;
+    }
+    .datos-contacto {
+      flex: 1 1 300px;
+      padding: 40px;
+      color: #ccc;
+    }
+    .datos-contacto h3 {
+      font-size: 1.5rem;
+      color: #CF2D3A;
+      margin-bottom: 15px;
+      font-family: 'Bebas Neue', cursive;
+    }
+    .datos-contacto p {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="menu container">
-      <img src="images/logo.svg" class="logoo" alt="Logo C4A">
-      <input type="checkbox" id="menu">
-      <label for="menu">
-        <img src="images/menu.png" class="menu-icono" alt="Menú">
-      </label>
-      <nav class="navbar">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="Servicios.html">Servicios</a></li>
-          <li><a href="Sobre Nosotros.html">Sobre Nosotros</a></li>
-          <li><a href="kit.html" class="btn-menu">Kit</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="header-content container">
-      <h1>Contáctanos</h1>
-      <p>¿Tienes dudas o necesitas ayuda? Escríbenos y te responderemos a la brevedad.</p>
-    </div>
+  <header class="contacto-hero">
+    <h1>Contáctanos</h1>
+    <p>¿Necesitas proteger tus activos digitales? Completa el formulario y nuestro equipo te contactará a la brevedad.</p>
   </header>
 
-  <main>
-    <section class="FormaContact">
-      <h2>Formulario de Contacto</h2>
-      <form action="https://formspree.io/f/mblgzwvn" method="POST">
-        <input type="hidden" name="_redirect" value="Gracias.html">
-        <input class="campo" type="text" name="nombre" placeholder="Tu Nombre" required>
-        <input class="campo" type="email" name="email" placeholder="Tu Email" required>
-        <input class="campo" type="text" name="empresa" placeholder="Empresa u organización">
-        <textarea class="campo" name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte..." required></textarea>
-        <input type="submit" value="Enviar Mensaje" class="btn-2">
+  <section class="contacto-section">
+    <div class="formulario-contacto">
+      <h2>Formulario de contacto</h2>
+      <form id="contact-form">
+        <input type="text" name="nombre" placeholder="Tu nombre" required />
+        <input type="email" name="email" placeholder="Tu correo electrónico" required />
+        <input type="text" name="empresa" placeholder="Empresa u organización (opcional)" />
+        <textarea name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte..." required></textarea>
+        <input type="submit" value="Enviar Mensaje" />
       </form>
-    </section>
-  </main>
-
-  <footer class="footer-bg">
-    <div class="footer-container">
-      <div class="footer-section">
-        <img src="images/logo.svg" alt="C4A Logo" class="footer-logo">
-      </div>
-      <div class="footer-section">
-        <h3>Servicios</h3>
-        <ul>
-          <li><a href="Servicios.html#pentesting">Pentesting</a></li>
-          <li><a href="Servicios.html#redteam">Red Teaming</a></li>
-          <li><a href="Servicios.html#vulnerabilidades">Análisis de Vulnerabilidades</a></li>
-          <li><a href="kit.html">Kit de Madurez</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Contacto</h3>
-        <ul>
-          <li>Chillán, Chile</li>
-          <li>+569 55338899</li>
-          <li>contacto@c4a.cl</li>
-        </ul>
-      </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 C4A. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+  </section>
+  
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+  
+      const form = e.target;
+      const data = new FormData(form);
+      const action = "https://formspree.io/f/mblgzwvn";
+  
+      try {
+        const response = await fetch(action, {
+          method: "POST",
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+  
+        if (response.ok) {
+          window.location.href = "Gracias.html"; // ✅ Redirección forzada
+        } else {
+          alert("Ocurrió un error. Por favor intenta nuevamente.");
+        }
+      } catch (error) {
+        alert("No se pudo enviar el mensaje. Revisa tu conexión.");
+      }
+    });
+  </script>
 </body>
 </html>

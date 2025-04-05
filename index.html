@@ -3,126 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>C4A - Expertos en Hacking Ético</title>
-  <meta name="description" content="Protegemos tu empresa con hacking ético. Servicios de Pentesting, Red Teaming, Análisis de Vulnerabilidades y más.">
+  <title>C4A - Ciberseguridad Ofensiva</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #1f1f1f;
+      color: #ccc;
+    }
+    header.hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.webp') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    header.hero h1 {
+      font-size: 4.5rem;
+      color: #CF2D3A;
+      font-family: 'Bebas Neue', cursive;
+      margin: 0;
+    }
+    header.hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-top: 1rem;
+    }
+    .btn-primary {
+      margin-top: 2rem;
+      background-color: #CF2D3A;
+      color: #fff;
+      padding: 15px 30px;
+      border: none;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: background 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background-color: #B4272E;
+    }
+    section.intro {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    section.intro h2 {
+      font-size: 2.8rem;
+      font-family: 'Bebas Neue', cursive;
+      color: #fff;
+    }
+    section.intro p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="menu container">
-      <img src="images/logo.svg" class="logoo" alt="Logo C4A">
-      <input type="checkbox" id="menu">
-      <label for="menu">
-        <img src="images/menu.png" class="menu-icono" alt="Menú">
-      </label>
-      <nav class="navbar">
-        <ul>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="Sobre Nosotros.html">Sobre Nosotros</a></li>
-          <li><a href="Contacto.html">Contacto</a></li>
-          <li><a href="kit.html" class="btn-menu">Kit de Madurez</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="header-content container">
-      <div class="header-txt">
-        <h1>Expertos en Hacking Ético</h1>
-        <p>
-          Protegemos tu empresa con simulaciones de ataque real, identificando fallas antes que los ciberdelincuentes. Evaluamos tus sitios web, redes, APIs y apps móviles.
-        </p>
-        <a href="#servicios" class="btn-1">Explorar Servicios</a>
-      </div>
-      <div class="header-dir">
-        <div class="dir">
-          <h3>Dirección</h3>
-          <p>Chillán, Chile</p>
-        </div>
-        <div class="dir">
-          <h3>Teléfono</h3>
-          <p>+569 8179 4512</p>
-        </div>
-        <div class="dir">
-          <h3>Email</h3>
-          <p>contacto@c4a.cl</p>
-        </div>
-      </div>
-    </div>
+  <header class="hero">
+    <h1>Expertos en Ciberseguridad Ofensiva</h1>
+    <p>Protegemos tu empresa mediante hacking ético y simulaciones reales de ataque. Descubre vulnerabilidades antes que lo hagan los ciberatacantes.</p>
+    <a href="Servicios.html" class="btn-primary">Explorar Servicios</a>
   </header>
 
-  <main>
-    <section id="servicios" class="services container">
-      <h2>Nuestros Servicios</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <img src="images/ic1.png" alt="Pentesting">
-          <h3>Pentesting</h3>
-          <p>Simulamos ataques reales para descubrir vulnerabilidades críticas en tu sistema antes que los hackers.</p>
-          <a href="Servicios.html#pentesting" class="btn-service">Solicitar Pentest</a>
-        </div>
-        <div class="service-card">
-          <img src="images/ic2.png" alt="Red Teaming">
-          <h3>Red Teaming</h3>
-          <p>Ejercicio avanzado que simula una intrusión completa a tu organización, evaluando personas, procesos y tecnología.</p>
-          <a href="Servicios.html#redteam" class="btn-service">Ver detalles</a>
-        </div>
-        <div class="service-card">
-          <img src="images/ic3.png" alt="Vulnerabilidades">
-          <h3>Análisis de Vulnerabilidades</h3>
-          <p>Escaneamos y auditamos tus sistemas buscando fallas conocidas y misconfiguraciones antes de que sean explotadas.</p>
-          <a href="Servicios.html#vulnerabilidades" class="btn-service">Agendar Diagnóstico</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="cta-container">
-        <h2>¿Quieres saber si tu empresa está protegida?</h2>
-        <p>Evalúa gratis tu madurez digital en ciberseguridad con nuestro kit inicial.</p>
-        <a href="kit.html" class="btn-cta">Descargar Kit Gratuito</a>
-      </div>
-    </section>
-
-    <section class="diferenciadores container">
-      <h2>¿Por qué elegir C4A?</h2>
-      <ul>
-        <li>✅ Equipo con certificaciones internacionales en ciberseguridad.</li>
-        <li>✅ Enfoque ofensivo real: usamos tácticas de ataque para protegerte mejor.</li>
-        <li>✅ Adaptado a startups, pymes y organizaciones en crecimiento.</li>
-        <li>✅ Atención personalizada y confidencialidad garantizada.</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="footer-bg">
-    <div class="footer-container">
-      <div class="footer-section">
-        <img src="images/logo.svg" alt="C4A Logo" class="footer-logo">
-      </div>
-      <div class="footer-section">
-        <h3>Servicios</h3>
-        <ul>
-          <li><a href="Servicios.html#pentesting">Pentesting</a></li>
-          <li><a href="Servicios.html#redteam">Red Teaming</a></li>
-          <li><a href="Servicios.html#vulnerabilidades">Análisis de Vulnerabilidades</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Contacto</h3>
-        <ul>
-          <li>Chillán, Chile</li>
-          <li>+569 55338899</li>
-          <li>contacto@c4a.cl</li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Redes Sociales</h3>
-        <p>(agrega íconos y links si están disponibles)</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 C4A. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+  <section class="intro">
+    <h2>Tu socio en ciberseguridad avanzada</h2>
+    <p>En C4A combinamos experiencia internacional, metodologías ofensivas y un enfoque personalizado para proteger activos digitales críticos en Chile y Latinoamérica.</p>
+  </section>
 </body>
 </html>

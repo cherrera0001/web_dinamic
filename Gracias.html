@@ -1,64 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gracias por contactarnos - C4A</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gracias - C4A</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    .gracias {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
       background-color: #1f1f1f;
       color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       text-align: center;
-      padding: 2rem;
+      padding: 20px;
     }
-    .gracias img {
-      max-width: 800px;
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 2rem;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
-    .gracias h1 {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 4rem;
+    h1 {
+      font-size: 3.5rem;
       color: #CF2D3A;
-      margin-bottom: 1rem;
-    }
-    .gracias p {
-      max-width: 700px;
-      font-size: 1.2rem;
-      color: #ccc;
-    }
-    .gracias a {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 0.75rem 1.5rem;
       font-family: 'Bebas Neue', cursive;
+    }
+    p {
       font-size: 1.2rem;
-      color: #fff;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    .btn-volver {
+      margin-top: 30px;
       background-color: #CF2D3A;
+      color: #fff;
+      padding: 12px 28px;
+      border: none;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.1rem;
+      border-radius: 5px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      border-radius: 5px;
+      cursor: pointer;
       text-decoration: none;
     }
-    .gracias a:hover {
+    .btn-volver:hover {
       background-color: #B4272E;
     }
   </style>
 </head>
 <body>
-  <section class="gracias">
-    <img src="images/gracias-c4a.png" alt="Gracias por tu mensaje">
-    <h1>¡Gracias por tu mensaje!</h1>
-    <p>Hemos recibido tu solicitud correctamente. Nuestro equipo revisará tu mensaje y se pondrá en contacto contigo a la brevedad. Valoramos tu interés en nuestros servicios de ciberseguridad ofensiva y estamos comprometidos con proteger lo que más te importa.</p>
-    <a href="index.html">Volver al Inicio</a>
-  </section>
+  <h1>¡Gracias por tu mensaje!</h1>
+  <p>Tu solicitud fue enviada exitosamente. Nuestro equipo la está revisando y nos contactaremos contigo lo antes posible. Valoramos tu interés en C4A y en proteger tu organización con ciberseguridad ofensiva de alto nivel.</p>
+  <a class="btn-volver" href="index.html">Volver al Inicio</a>
 </body>
 </html>

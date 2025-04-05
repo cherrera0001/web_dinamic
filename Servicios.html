@@ -3,104 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kit de Madurez Digital - C4A</title>
-  <meta name="description" content="Diagnostica gratis el nivel de madurez digital en ciberseguridad de tu empresa. Descarga nuestro Kit de Evaluación.">
+  <title>C4A - Ciberseguridad Ofensiva</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #1f1f1f;
+      color: #ccc;
+    }
+    header.hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.webp') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    header.hero h1 {
+      font-size: 4.5rem;
+      color: #CF2D3A;
+      font-family: 'Bebas Neue', cursive;
+      margin: 0;
+    }
+    header.hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-top: 1rem;
+    }
+    .btn-primary {
+      margin-top: 2rem;
+      background-color: #CF2D3A;
+      color: #fff;
+      padding: 15px 30px;
+      border: none;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: background 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background-color: #B4272E;
+    }
+    section.intro {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    section.intro h2 {
+      font-size: 2.8rem;
+      font-family: 'Bebas Neue', cursive;
+      color: #fff;
+    }
+    section.intro p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    section.servicios {
+      padding: 60px 20px;
+      background-color: #191919;
+    }
+    .servicios h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      color: #fff;
+      font-family: 'Bebas Neue', cursive;
+      margin-bottom: 40px;
+    }
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .servicio {
+      background-color: #070707;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .servicio:hover {
+      transform: scale(1.05);
+    }
+    .servicio h3 {
+      color: #CF2D3A;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .servicio p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="menu container">
-      <img src="images/logo.svg" class="logoo" alt="Logo C4A">
-      <input type="checkbox" id="menu">
-      <label for="menu">
-        <img src="images/menu.png" class="menu-icono" alt="Menú">
-      </label>
-      <nav class="navbar">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="Servicios.html">Servicios</a></li>
-          <li><a href="Contacto.html">Contacto</a></li>
-          <li><a href="kit.html" class="btn-menu active">Kit</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="header-content container">
-      <h1>Kit de Madurez Digital</h1>
-      <p>Evalúa gratis la madurez en ciberseguridad de tu empresa y descubre tus oportunidades de mejora.</p>
-      <a href="#descarga" class="btn-1">Descargar Kit Básico</a>
-    </div>
+  <header class="hero">
+    <h1>Expertos en Ciberseguridad Ofensiva</h1>
+    <p>Protegemos tu empresa mediante hacking ético y simulaciones reales de ataque. Descubre vulnerabilidades antes que lo hagan los ciberatacantes.</p>
+    <a href="#servicios" class="btn-primary">Explorar Servicios</a>
   </header>
 
-  <main class="container">
-    <section class="kit-intro">
-      <h2>¿Qué es el Kit de Madurez Digital?</h2>
-      <p>Es una herramienta desarrollada por C4A que permite a empresas, especialmente pymes y startups, conocer su nivel de madurez en seguridad digital. Está basado en buenas prácticas y frameworks como ISO 27001 y el Modelo de Madurez de Seguridad de C4A.</p>
-    </section>
+  <section class="intro">
+    <h2>Tu socio en ciberseguridad avanzada</h2>
+    <p>En C4A combinamos experiencia internacional, metodologías ofensivas y un enfoque personalizado para proteger activos digitales críticos en Chile y Latinoamérica.</p>
+  </section>
 
-    <section class="kit-opciones" id="descarga">
-      <h2>Elige tu versión</h2>
-      <div class="kit-cards">
-        <div class="kit-card">
-          <h3>Kit Básico</h3>
-          <p>Diagnóstico gratuito y autoaplicado en formato Excel. Ideal para tener una primera aproximación.</p>
-          <ul>
-            <li>✅ 7 dominios clave</li>
-            <li>✅ Puntaje automático</li>
-            <li>✅ Recomendaciones generales</li>
-          </ul>
-          <a href="docs/Kit_Basico_C4A.xlsx" download class="btn-cta">Descargar Kit Básico</a>
-        </div>
-        <div class="kit-card">
-          <h3>Kit Mediano</h3>
-          <p>Incluye diagnóstico acompañado por nuestro equipo, con análisis más profundo y orientado a resultados.</p>
-          <ul>
-            <li>✅ Evaluación personalizada</li>
-            <li>✅ Informe con insights y plan de mejora</li>
-            <li>✅ Reunión de devolución incluida</li>
-          </ul>
-          <a href="Contacto.html?servicio=kit-mediano" class="btn-cta">Solicitar Kit Mediano</a>
-        </div>
+  <section class="servicios" id="servicios">
+    <h2>Servicios</h2>
+    <div class="servicios-grid">
+      <div class="servicio">
+        <h3>Pentesting</h3>
+        <p>Simulamos ataques reales para identificar vulnerabilidades críticas antes de que puedan ser explotadas.</p>
       </div>
-    </section>
-
-    <section class="kit-beneficios">
-      <h2>¿Qué obtienes con este diagnóstico?</h2>
-      <ul>
-        <li>📊 Visibilidad real sobre el estado de tu ciberseguridad.</li>
-        <li>🔍 Detección de áreas críticas a fortalecer.</li>
-        <li>🛠️ Recomendaciones claras y accionables.</li>
-        <li>📈 Base para definir una estrategia de mejora.</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="footer-bg">
-    <div class="footer-container">
-      <div class="footer-section">
-        <img src="images/logo.svg" alt="C4A Logo" class="footer-logo">
+      <div class="servicio">
+        <h3>Red Teaming</h3>
+        <p>Ejercicios avanzados de intrusión para evaluar la respuesta real de tu equipo de seguridad ante ataques coordinados.</p>
       </div>
-      <div class="footer-section">
-        <h3>Servicios</h3>
-        <ul>
-          <li><a href="Servicios.html#pentesting">Pentesting</a></li>
-          <li><a href="Servicios.html#redteam">Red Teaming</a></li>
-          <li><a href="Servicios.html#vulnerabilidades">Análisis de Vulnerabilidades</a></li>
-          <li><a href="kit.html">Kit de Madurez</a></li>
-        </ul>
+      <div class="servicio">
+        <h3>Análisis de Vulnerabilidades</h3>
+        <p>Detección automatizada y revisión de fallas en tus sistemas, redes y aplicaciones.</p>
       </div>
-      <div class="footer-section">
-        <h3>Contacto</h3>
-        <ul>
-          <li>Chillán, Chile</li>
-          <li>+569 55338899</li>
-          <li>contacto@c4a.cl</li>
-        </ul>
+      <div class="servicio">
+        <h3>Kit de Madurez</h3>
+        <p>Diagnóstico gratuito del nivel de ciberseguridad de tu organización, con recursos para avanzar.</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 C4A. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+  </section>
 </body>
 </html>
