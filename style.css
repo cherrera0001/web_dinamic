@@ -85,14 +85,14 @@ h2:hover, .section-title:hover {
 
 /* Hero Header */
 header.hero {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/welcome.webp') center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url('images/hero_background.webp') center/cover no-repeat;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
 }
 
 header.hero h1 {
