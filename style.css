@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Centralized Stylesheet for C4A Website */
+
+/* Reset and Base */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f0f0f;
+  color: #ccc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Buttons */
+.btn-primary, .btn-1, .btn-2, .boton, .b1, .b2 {
+  background-color: #CF2D3A;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Bebas Neue', cursive;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.btn-primary:hover, .btn-1:hover, .btn-2:hover, .boton:hover, .b1:hover, .b2:hover {
+  background-color: #B4272E;
+  color: #fff;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Bebas Neue', cursive;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h2::after, .section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #CF2D3A;
+  margin: 10px auto 0;
+  transition: width 0.4s ease;
+}
+
+h2:hover::after, .section-title:hover::after {
+  width: 120px;
+}
+
+h2:hover, .section-title:hover {
+  color: #CF2D3A;
+  transform: scale(1.05);
+}
+
+/* Hero Header */
+header.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/welcome.webp') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+header.hero h1 {
+  font-size: 4.5rem;
+  color: #CF2D3A;
+  margin-bottom: 1rem;
+}
+
+header.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Section Defaults */
+section {
+  padding: 60px 20px;
+}
+
+section.intro, section.servicios, section.contacto-section {
+  text-align: center;
+}
+
+/* Form */
+form input, form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #1f1f1f;
+  border: 1px solid #CF2D3A;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+form input[type="submit"] {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.2rem;
+  background-color: #CF2D3A;
+}
+
+form input[type="submit"]:hover {
+  background-color: #B4272E;
+}
+
+/* Cards and Sections */
+.servicios-grid, .services-group, .serv-group, .personal-group, .features-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.servicio, .services-1, .serv-1, .personal-1, .personal-2, .feature {
+  background-color: #070707;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  max-width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.servicio:hover, .services-1:hover, .serv-1:hover, .personal-1:hover, .personal-2:hover, .feature:hover {
+  transform: scale(1.05);
+  background-color: #111;
+}
+
+/* Footer */
+.footer-bg {
+  background-color: #0f0f0f;
+  padding: 40px 20px;
+  color: #ccc;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-section h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #CF2D3A;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header.hero h1 {
+    font-size: 3rem;
+  }
+
+  section.intro h2, section.servicios h2 {
+    font-size: 2.2rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Utilities */
+hr {
+  border: 1px solid #CF2D3A;
+  width: 50px;
+  margin: 10px auto;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios C4A</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+    }
+    .servicios-hero {
+      background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('images/servicios-hero.webp') center/cover no-repeat;
+      padding: 100px 20px;
+      text-align: center;
+      color: #fff;
+    }
+    .servicios-hero h1 {
+      font-size: 3rem;
+      font-family: 'Bebas Neue', cursive;
+      color: #CF2D3A;
+      margin-bottom: 10px;
+    }
+    .servicios-section {
+      padding: 60px 20px;
+      background-color: #191919;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+    .servicio {
+      background-color: #0e0e0e;
+      border: 1px solid #CF2D3A;
+      border-radius: 10px;
+      padding: 30px;
+      width: 280px;
+      text-align: center;
+    }
+    .servicio h2 {
+      font-family: 'Bebas Neue', cursive;
+      color: #ffffff;
+      margin-bottom: 15px;
+      font-size: 1.6rem;
+    }
+    .servicio p {
+      color: #bbb;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+    .servicio a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #CF2D3A;
+      color: #fff;
+      font-family: 'Bebas Neue', cursive;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+    .servicio a:hover {
+      background-color: #B4272E;
+    }
+  </style>
+</head>
+<body>
+  <section class="servicios-hero">
+    <h1>Nuestros Servicios</h1>
+    <p>Ofrecemos soluciones ofensivas y estratégicas para fortalecer tu ciberseguridad.</p>
+  </section>
+
+  <section class="servicios-section">
+    <div class="servicio">
+      <h2>Pentesting</h2>
+      <p>Identificamos y explotamos vulnerabilidades para ayudarte a fortalecer tus sistemas antes que un atacante lo haga.</p>
+      <a href="pentesting.html" class="btn-servicio">Ver más</a>
+      <a href="contacto.html?servicio=pentesting">Solicitar</a>
+    </div>
+    <div class="servicio">
+      <h2>Red Teaming</h2>
+      <p>Simulaciones de ataque avanzadas para evaluar tus defensas en escenarios reales.</p>
+      <a href="redteam.html" class="btn-servicio">Ver más</a>
+      <a href="contacto.html?servicio=redteam">Solicitar</a>
+    </div>
+    <div class="servicio">
+      <h2>Análisis de Vulnerabilidades</h2>
+      <p>Detección automatizada y manual de brechas de seguridad en tus activos críticos.</p>
+      <a href="vulnerabilidades.html" class="btn-servicio">Ver más</a>
+      <a href="contacto.html?servicio=vulnerabilidades">Solicitar</a>
+    </div>
+    <div class="servicio">
+      <h2>Kit de Madurez</h2>
+      <p>Herramientas para evaluar tu nivel de madurez digital y definir estrategias de mejora.</p>
+      <a href="kit.html">Explorar Kit</a>
+    </div>
+  </section>
+</body>
+</html>
