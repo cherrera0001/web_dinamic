@@ -22,6 +22,11 @@ body {
   margin: 0 auto;
 }
 
+.logo img {
+  margin-right: 20px; /* puedes ajustar este valor */
+  vertical-align: middle;
+}
+
 /* Buttons */
 .btn-primary, .btn-1, .btn-2, .boton, .b1, .b2 {
   background-color: #CF2D3A;
