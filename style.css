@@ -87,7 +87,13 @@ header.hero {
 
 .hero-content {
   max-width: 900px;
+  width: 100%;
   padding: 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header.hero h1 {
