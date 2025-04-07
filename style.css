@@ -85,6 +85,10 @@ header.hero {
   text-align: center;
 }
 
+.hero-content {
+  max-width: 900px;
+  padding: 0 20px;
+}
 
 header.hero h1 {
   font-size: 4.5rem;
