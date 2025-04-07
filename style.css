@@ -68,9 +68,14 @@ h2:hover, .section-title:hover {
   transform: scale(1.05);
 }
 
-/* Hero Header */
+/* Ocultar el checkbox del menú hamburguesa */
+#menu-toggle {
+  display: none;
+}
+
+/* Mostrar la imagen de fondo */
 header.hero {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
               url('images/hero_background.webp') center/cover no-repeat;
   height: 100vh;
   display: flex;
@@ -79,6 +84,7 @@ header.hero {
   align-items: center;
   text-align: center;
 }
+
 
 header.hero h1 {
   font-size: 4.5rem;
