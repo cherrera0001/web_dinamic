@@ -112,6 +112,10 @@ header.hero p {
   margin-top: 1rem;
 }
 
+.hero-content .btn-1 {
+  margin-top: 20px; /* Ajusta según necesidad */
+}
+
 /* Section Defaults */
 section {
   padding: 60px 20px;
