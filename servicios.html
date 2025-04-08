@@ -3,98 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servicios C4A</title>
+  <title>Servicios | C4A</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      background-color: #0e0e0e;
-      color: #ffffff;
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-    }
-    .servicios-hero {
-      background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('images/servicios-hero.webp') center/cover no-repeat;
-      padding: 100px 20px;
-      text-align: center;
-      color: #fff;
-    }
-    .servicios-hero h1 {
-      font-size: 3rem;
-      font-family: 'Bebas Neue', cursive;
-      color: #CF2D3A;
-      margin-bottom: 10px;
-    }
-    .servicios-section {
-      padding: 60px 20px;
-      background-color: #191919;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-    }
-    .servicio {
-      background-color: #0e0e0e;
-      border: 1px solid #CF2D3A;
-      border-radius: 10px;
-      padding: 30px;
-      width: 280px;
-      text-align: center;
-    }
-    .servicio h2 {
-      font-family: 'Bebas Neue', cursive;
-      color: #ffffff;
-      margin-bottom: 15px;
-      font-size: 1.6rem;
-    }
-    .servicio p {
-      color: #bbb;
-      font-size: 0.95rem;
-      margin-bottom: 15px;
-    }
-    .servicio a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #CF2D3A;
-      color: #fff;
-      font-family: 'Bebas Neue', cursive;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-    .servicio a:hover {
-      background-color: #B4272E;
-    }
-  </style>
 </head>
 <body>
-  <section class="servicios-hero">
-    <h1>Nuestros Servicios</h1>
-    <p>Ofrecemos soluciones ofensivas y estratégicas para fortalecer tu ciberseguridad.</p>
+  <section class="intro">
+    <h2 class="section-title">Servicios</h2>
+    <p>Ofrecemos soluciones ofensivas, estratégicas y formativas para fortalecer tu ciberseguridad.</p>
   </section>
 
-  <section class="servicios-section">
-    <div class="servicio">
-      <h2>Pentesting</h2>
+  <section class="services-group container">
+    <!-- Hacking Ético -->
+    <div class="services-1">
+      <h3>HACKING ÉTICO</h3>
+      <hr>
       <p>Identificamos y explotamos vulnerabilidades para ayudarte a fortalecer tus sistemas antes que un atacante lo haga.</p>
-      <a href="pentesting.html" class="btn-servicio">Ver más</a>
-      <a href="contacto.html?servicio=pentesting">Solicitar</a>
+      <a href="pentesting.html" class="btn-1">Ver más</a>
+      <a href="contacto.html?servicio=hackingetico" class="btn-2">Solicitar</a>
     </div>
-    <div class="servicio">
-      <h2>Red Teaming</h2>
+
+    <!-- Red Teaming -->
+    <div class="services-1">
+      <h3>RED TEAMING</h3>
+      <hr>
       <p>Simulaciones de ataque avanzadas para evaluar tus defensas en escenarios reales.</p>
-      <a href="redteam.html" class="btn-servicio">Ver más</a>
-      <a href="contacto.html?servicio=redteam">Solicitar</a>
+      <a href="redteam.html" class="btn-1">Ver más</a>
+      <a href="contacto.html?servicio=redteaming" class="btn-2">Solicitar</a>
     </div>
-    <div class="servicio">
-      <h2>Análisis de Vulnerabilidades</h2>
-      <p>Detección automatizada y manual de brechas de seguridad en tus activos críticos.</p>
-      <a href="vulnerabilidades.html" class="btn-servicio">Ver más</a>
-      <a href="contacto.html?servicio=vulnerabilidades">Solicitar</a>
+
+    <!-- DevSecOps -->
+    <div class="services-1">
+      <h3>DEVSECOPS</h3>
+      <hr>
+      <p>Integración de seguridad continua en procesos CI/CD. Automatización de pruebas, escaneo de código y políticas seguras desde el desarrollo.</p>
+      <a href="vulnerabilidades.html" class="btn-1">Ver más</a>
+      <a href="contacto.html?servicio=devsecops" class="btn-2">Solicitar</a>
     </div>
-    <div class="servicio">
-      <h2>Kit de Madurez</h2>
+
+    <!-- Kit de Madurez -->
+    <div class="services-1" style="border: 2px solid #00DFA2; background-color: #0e0e0e;">
+      <h3 style="color: #00DFA2">KIT DE MADUREZ</h3>
+      <hr style="border-color: #00DFA2;">
       <p>Herramientas para evaluar tu nivel de madurez digital y definir estrategias de mejora.</p>
-      <a href="kit.html">Explorar Kit</a>
+      <a href="kit.html" class="btn-1" style="background-color: #00DFA2; color: #0e0e0e">Explorar Kit</a>
+    </div>
+
+    <!-- Capacitaciones -->
+    <div class="services-1" style="border: 2px solid #8c52ff;">
+      <h3 style="color: #8c52ff">CAPACITACIONES EN CIBERSEGURIDAD</h3>
+      <hr style="border-color: #8c52ff;">
+      <p>Formación práctica para equipos: concientización, talleres técnicos y respuesta a incidentes.</p>
+      <a href="capacitaciones.html" class="btn-1" style="background-color: #8c52ff; color: #fff">Ver más</a>
+      <a href="contacto.html?servicio=capacitaciones" class="btn-2">Solicitar</a>
     </div>
   </section>
 </body>
