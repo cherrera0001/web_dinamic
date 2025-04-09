@@ -15,6 +15,9 @@
     <form action="https://formspree.io/f/mblgzwvn" method="POST" id="contact-form">
       <input type="text" name="nombre" placeholder="Tu nombre" required>
       <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <!-- Honeypot (bloquea bots simples) -->
+      <input type="text" name="_gotcha" style="display:none">
+
       <input type="text" name="empresa" placeholder="Empresa (opcional)">
       <textarea name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
 
