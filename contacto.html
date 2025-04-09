@@ -5,104 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto | C4A</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .contacto-hero {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/contact-hero.webp') center/cover no-repeat;
-      padding: 100px 20px;
-      text-align: center;
-      color: #fff;
-    }
-    .contacto-hero h1 {
-      font-size: 3.5rem;
-      font-family: 'Bebas Neue', cursive;
-      color: #CF2D3A;
-      margin-bottom: 10px;
-    }
-    .contacto-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 60px 20px;
-      background-color: #191919;
-    }
-    .formulario-contacto {
-      flex: 1 1 400px;
-      max-width: 500px;
-      background-color: #0e0e0e;
-      padding: 40px;
-      border-radius: 10px;
-    }
-    .formulario-contacto h2 {
-      font-family: 'Bebas Neue', cursive;
-      color: #fff;
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 15px;
-      margin-bottom: 15px;
-      background-color: #1f1f1f;
-      border: 1px solid #CF2D3A;
-      border-radius: 5px;
-      color: #fff;
-      font-size: 1rem;
-    }
-    form input[type="submit"] {
-      background-color: #CF2D3A;
-      color: #fff;
-      font-family: 'Bebas Neue', cursive;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    form input[type="submit"]:hover {
-      background-color: #B4272E;
-    }
-  </style>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-  <header class="contacto-hero">
-    <h1>Contáctanos</h1>
-    <p>Completa el formulario y nuestro equipo te contactará a la brevedad.</p>
-  </header>
+  <section class="contacto-section container">
+    <h2 class="section-title">Contáctanos</h2>
+    <p>¿Tienes dudas, necesitas ayuda o quieres cotizar un servicio? Completa el formulario y te responderemos pronto.</p>
 
-  <section class="contacto-section">
-    <div class="formulario-contacto">
-      <h2>Formulario de contacto</h2>
-      <form id="contact-form">
-        <input type="text" name="nombre" placeholder="Tu nombre" required />
-        <input type="email" name="email" placeholder="Tu correo electrónico" required />
-        <input type="text" name="empresa" placeholder="Empresa u organización (opcional)" />
-        <textarea name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte..." required></textarea>
-        <input type="submit" value="Enviar Mensaje" />
-      </form>
-    </div>
+    <form action="https://formspree.io/f/mblgzwvn" method="POST" id="contact-form">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <input type="text" name="empresa" placeholder="Empresa (opcional)">
+      <textarea name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
+
+      <!-- Formspree + reCAPTCHA integración automática -->
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_subject" value="Nuevo mensaje desde C4A.cl">
+
+      <input type="submit" value="Enviar">
+    </form>
   </section>
-
-  <script>
-    document.getElementById('contact-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      const action = "https://formspree.io/f/mblgzwvn";
-      try {
-        const response = await fetch(action, {
-          method: "POST",
-          body: data,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-        if (response.ok) {
-          window.location.href = "gracias.html";
-        } else {
-          alert("Ocurrió un error. Por favor intenta nuevamente.");
-        }
-      } catch (error) {
-        alert("No se pudo enviar el mensaje. Revisa tu conexión.");
-      }
-    });
-  </script>
 </body>
 </html>
