@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>C4A</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+
+        <div class="menu container">
+            <img src="images/logo.svg" class="logoo" alt="">
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="images/menu.png" class="menu-icono" alt="">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Sobre Nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="Servicios.html">Servicios</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>C4A</h1>
+                <span>Chile</span>
+                <p>
+                    Nos especializamos en ciberseguridad ofensiva, utilizando hacking ético 
+                    para proteger sistemas y datos. 
+                    Evaluamos y aseguramos la seguridad de APIs, sitios web, aplicaciones móviles y redes, 
+                    además de ofrecer capacitaciones para mejorar la defensa ante ciberataques.
+                 </p>
+                <a href="#" class="btn-1">Informacion</a>
+            </div>
+            <div class="header-dir">
+                <div class="dir">
+                    <h3>Direccion</h3>
+                    <p>Chillan</p>
+                </div>
+                <div class="dir">
+                    <h3>Telefono</h3>
+                    <p>+5964781523</p>
+                </div>
+                <div class="dir">
+                    <h3>Horario</h3>
+                    <p>9am a 9pm</p>                  
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="somos">
+
+        <div class="somos-1">
+
+            <h2>¿Quienes Somos?</h2>
+
+            <p>
+                En C4A somos una empresa de ciberseguridad enfocada en proteger la información y 
+                sistemas de nuestros clientes. Nos especializamos en hacking ético y usamos herramientas avanzadas p
+                ara evaluar la seguridad de sitios web, aplicaciones y otros sistemas digitales. Nuestro equipo 
+                adapta cada solución a las necesidades específicas de cada cliente, asegurando una protección 
+                efectiva y confiable. En C4A, trabajamos
+                junto a nuestros clientes para construir un espacio digital más seguro y confiable.
+            </p>
+        </div>
+
+        <div class="somos-2"></div>
+
+
+    </section>
+
+    <section class="quienes">
+
+        <div class="quienes-1"></div>
+
+        <div class="quienes-2">
+
+            <h2>¿Que Hacemos?</h2>
+
+            <p>
+                Somos una empresa especializada en la ciberseguridad la cual de momento nuestro 
+                enfoque es seguridad ofensiva, en la cual se
+                enfoca en proteger los sistemas y datos de sus clientes mediante principios éticos de
+                hacking y estrategias avanzadas, se ofrecen servicios personalizados de evaluación y
+                certificación de la seguridad en APIs, Sitios Web, aplicaciones móviles y redes
+                empresariales. También brinda programas de capacitación para fortalecer la
+                conciencia y respuesta ante los ciberataques.
+            </p>
+        </div>
+    </section>
+
+    <section class="personal container">
+        <div class="personal-txt">
+            <h2>Nuestras Certificaciones</h2>
+            <p>
+                servicios de certificación en seguridad para APIs, sitios web, aplicaciones
+                móviles y redes empresariales, con el fin de identificar y corregir vulnerabilidades
+                comunes como la exposición de datos, inyección de código y fallos de autenticación. 
+                Estas certificaciones protegen 
+                contra amenazas específicas en cada área y aseguran un entorno digital más seguro.
+            </p>
+        </div>
+        <div class="personal-group">
+            <div class="personal-1">
+                <img src="images/api.webp" alt="">
+                <h3>Certificacion API</h3>
+                <p>
+                    se identifican vulnerabilidades como
+                    exposición de datos, inyección de códigos y 
+                    fallos de autenticación.
+                </p>
+                <a href="Servicios.html">Saber mas</a>
+            </div>
+            <div class="personal-1">
+                <img src="images/web.webp" alt="">
+                <h3>Certificacion Web</h3>
+                <p>
+                    Cuanta con protección contra amenazas como ransomware, XSS,
+                    secuestro de sesiones   
+                </p>
+                <a href="Servicios.html">Saber mas</a>
+            </div>
+            <div class="personal-1">
+                <img src="images/app.webp" alt="">
+                <h3>Certificacion App Mobile</h3>
+                <p>
+                    Soluciones contra el malware, fuga de datos y riesgos en
+                    interfaces.
+                </p>
+                <a href="Servicios.html">Saber mas</a>
+            </div>
+            
+        </div>
+        <div class="personal-gro">
+            <div class="personal-2">
+                <img src="images/red.png" alt="">
+                <h3>Certificacion De Red</h3>
+                <p>
+                    Previene los ataques DDoS, accesos no autorizados y la
+                    interceptación de datos.
+                </p>
+                <a href="Servicios.html">Saber mas</a>
+            </div>
+            <div class="personal-2">
+                <img src="images/cert.png" alt="">
+                <h3>Capacitacion y Concientización</h3>
+                <p>
+                    Es un programa para prevenir brechas de seguridad causadas por los
+                    errores humanos.
+                </p>
+                <a href="Servicios.html">Saber mas</a>
+            </div>
+            
+        </div>
+
+    </section>
+
+    <script>
+        const personalCards = document.querySelectorAll('.personal-1, .personal-2');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        personalCards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+
+   
+<footer class="footer-bg">
+    <div class="footer-container">
+        <div class="footer-section">
+            <img src="images/logo.svg" alt="C4A Logo" class="footer-logo">
+        </div>
+        <div class="footer-section">
+            <h3>Links Rápidos</h3>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Sobre Nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="Servicios.html">Servicios</a></li>
+                <li><a href="Contacto.html">Contáctenos</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Servicios</h3>
+            <ul>
+                <li>Ciberseguridad Ofensiva</li>
+               
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contacto</h3>
+            <ul>
+                <li>Dirección: Chillán, Chile</li>
+                <li>Teléfono: +569 81794512</li>
+                <li>Correo: C4A@gmail.com</li>
+                <li>Horario: Lunes a Viernes, 9:00 AM - 6:00 PM</li>
+            </ul>
+          
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 C4A. Todos los derechos reservados.</p>
+    </div>
+</footer>
+</body>
+</html>

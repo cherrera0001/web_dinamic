@@ -1,0 +1,1298 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* font-family: "Bebas Neue", cursive; */
+
+/* Index Inicio */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #1f1f1f;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Parte Menu */
+
+.header {
+    background-image: url(images/in.webp);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    color: #CF2D3A;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #FFFFFF;
+    display: block;
+}
+
+.menu .navbar ul li a:hover {
+    color: #CF2D3A;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+.header-txt {
+    text-align: center;
+    margin-bottom: 45pxs;
+}
+
+.header-txt h1, span, h3 {
+    font-size: 110px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive;
+    color: #CF2D3A;
+    margin-bottom: 15px;
+}
+
+.header-txt span {
+    font-size: 25px;
+}
+
+.header-txt p {
+    color: #AFAFAF;
+    padding: 0 250px;
+    margin: 25px 0;
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 11px 25px;
+    background-color: #D82E37;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-family: "Bebas Neue", cursive;
+    margin: 25px 0;
+    border: 0;
+}
+
+.btn-1:hover {
+    background-color: #B4272E;
+}
+
+.header-dir {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dir h3 {
+    font-size: 18px;
+}
+
+.dir p {
+    font-size: 22px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+
+/* Parte Bienvenido */
+
+.welcome {
+    display: flex;
+    height: 100vh; /* Ocupar toda la altura de la pantalla */
+}
+
+.welcome-1 {
+    background-image: url('images/wlc.webp'); /* Ruta de la imagen de fondo */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+
+.welcome-2 {
+    width: 50%;
+    padding: 150px 100px;
+    background-color: #191919;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+}
+
+.welcome-2 h2 {
+    font-size: 90px;
+    line-height: 100px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive;
+    margin-bottom: 20px;
+    position: relative;
+    transition: color 0.4s ease, transform 0.4s ease; /* Transición suave para color y escala */
+}
+
+.welcome-2 h2:hover {
+    color: #CF2D3A; /* Cambia el color al pasar el cursor */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+.welcome-2 h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #CF2D3A;
+    margin: 10px 0 0;
+    transition: width 0.4s ease; /* Transición suave para la línea */
+}
+
+.welcome-2 h2:hover::after {
+    width: 120px; /* La línea se expande al pasar el cursor */
+}
+
+.welcome-2 p {
+    font-size: 20px;
+    color: #AFAFAF;
+    margin: 25px 0;
+}
+
+/* Estilo para 'Contratación Directa' */
+.b1 {
+    font-size: 20px;
+    color: #CF2D3A;
+    padding: 5px 10px;
+    border: 1px solid #CF2D3A; /* Borde rojo alrededor */
+    display: inline-block;
+    margin-bottom: 20px;
+    position: relative;
+    transition: background-color 0.4s ease, color 0.4s ease; /* Transición suave para el color y el fondo */
+}
+
+.b1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #CF2D3A;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease, opacity 0.4s ease; /* Efecto de subrayado al hover */
+}
+
+.b1:hover {
+    background-color: #CF2D3A;
+    color: #191919; /* Texto cambia a oscuro al pasar el cursor */
+}
+
+.b1:hover::after {
+    transform: scaleX(1);
+    opacity: 1; /* Efecto de subrayado completo */
+}
+
+
+/* Parte del Servicio */
+
+.services {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #1f1f1f;
+}
+
+.seervices-txt h2 {
+    font-size: 90px;
+    line-height: 100px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    transition: color 0.4s ease, transform 0.4s ease; /* Transición suave para color y escala */
+}
+
+.services-txt h2:hover {
+    color: #CF2D3A; /* Cambia el color al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+.services-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+hr {
+    border: 1px solid #CF2D3A;
+    width: 50px;
+    margin: 10px 0;
+}
+
+.services-txt p {
+    padding: 20px 100px;
+    color: #ccc;
+}
+
+.services-group {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.services-1 {
+    background-color: #070707;
+    padding: 25px 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    opacity: 0; /* Inicialmente invisibles */
+    transform: translateX(-200px); /* Desplazar más hacia la izquierda */
+}
+
+.services-1.show {
+    opacity: 1;
+    transform: translateX(0); /* Posición normal al aparecer */
+    transition: transform 1s ease, opacity 1s ease; /* Transición más lenta */
+}
+
+.services-1:hover {
+    transform: scale(1.05); /* Efecto de zoom */
+}
+
+.services-1 img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.services-1 h3 {
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.services-1 p {
+    color: #bbb;
+    font-size: 14px;
+}
+
+.services-1 a {
+    color: #CF2D3A;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* Agregar la animación */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-200x); /* Desplazar desde más lejos a la izquierda */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Posición final */
+    }
+}
+
+
+/* Parte del que Somos */
+
+.prices {
+    display: flex;
+    flex-wrap: wrap; /* Para que se ajuste mejor en pantallas pequeñas */
+}
+
+.prices-1 {
+    width: 50%;
+    padding: 150px 250px 150px 100px;
+    background-color: #191919;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.prices-1 h2 {
+    font-size: 55px;
+    line-height: 60px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive;
+    margin-bottom: 20px;
+    position: relative;
+    transition: color 0.4s ease, transform 0.4s ease; /* Transición suave para color y escala */
+}
+
+.prices-1 p {
+    font-size: 20px;
+    color: #AFAFAF;
+    margin: 25px 0;
+}
+
+.prices-1 h2:hover {
+    color: #CF2D3A; /* Cambia el color al pasar el cursor */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+.prices-1 h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #CF2D3A;
+    margin: 10px 0 0;
+    transition: width 0.4s ease; /* Transición suave para la línea */
+}
+
+.prices-1 h2:hover::after {
+    width: 120px; /* La línea se expande al pasar el cursor */
+}
+
+table {
+    margin: 50px 0;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+tr {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #AFAFAF;
+    margin-bottom: 20px;
+}
+
+th {
+    color: #FFFFFF;
+    padding-bottom: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative; /* Para aplicar el subrayado */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición para el color y el zoom */
+}
+
+td {
+    color: #CF2D3A;
+    font-size: 16px;
+}
+
+/* Efecto de zoom en los títulos */
+th:hover {
+    transform: scale(1.1); /* Efecto de zoom */
+    color: #CF2D3A; /* Cambia el color al pasar el cursor */
+}
+
+/* Efecto visual atractivo para las secciones subrayadas */
+th::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #CF2D3A; /* Subrayado en rojo */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+th:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.prices-2 {
+    background-image: url(images/cib.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Efecto de hover en el botón */
+.boton {
+    font-size: 18px;
+    padding: 15px 30px;
+    background-color: #CF2D3A;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transición suave */
+    text-align: center;
+}
+
+.boton:hover {
+    background-color: #FFFFFF;
+    color: #B4272E;
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+
+
+/* Parte de los certificados */
+
+.personal {
+    padding: 80px 0; /* Reducir el padding */
+    text-align: center;
+    background-color: #1f1f1f; /* Fondo oscuro */
+}
+
+.personal-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #fff; /* Texto blanco */
+}
+
+.personal-txt h2 {
+    font-size: 70px;
+    line-height: 100px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    transition: color 0.4s ease, transform 0.4s ease; /* Transición suave para color y escala */
+}
+ 
+.personal-txt h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #CF2D3A;
+    margin: 10px auto 0; /* Alineación centrada */
+    transition: width 0.4s ease;
+}
+
+.personal-txt h2:hover::after {
+    width: 120px; /* La línea se expande al pasar el cursor */
+}
+
+.personal-txt h2:hover {
+    color: #CF2D3A; /* Cambia el color al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+.personal-group, .personal-gro {
+    display: flex;
+    justify-content: center; /* Centramos el contenido */
+    gap: 30px; /* Espacio entre los elementos */
+    flex-wrap: wrap; /* Para que se ajuste en pantallas pequeñas */
+    margin-bottom: 35px;
+}
+
+.personal-1, .personal-2 {
+    text-align: center;
+    max-width: 300px; /* Limitar el ancho de cada tarjeta */
+    padding: 20px;
+    background-color: #070707; /* Fondo oscuro para las tarjetas */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.personal-1:hover, .personal-2:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+.personal-1 img, .personal-2 img {
+    width: 100%; /* Hacer que la imagen ocupe todo el ancho disponible */
+    max-width: 250px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    object-fit: cover; /* Asegurar que la imagen se ajuste bien */
+}
+
+.personal-1 h3, .personal-2 h3 {
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.personal-1 p, .personal-2 p {
+    padding: 0 20px; /* Reducir el padding para un diseño más ajustado */
+    color: #bbb; /* Texto gris claro */
+    font-size: 14px;
+}
+
+.personal-1 a, .personal-2 a {
+    color: #CF2D3A;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 15px; /* Espacio encima del enlace */
+}
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%); /* Inicia desde fuera de la pantalla, a la derecha */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Llega a su posición original */
+        opacity: 1;
+    }
+}
+
+.personal-1, .personal-2 {
+    text-align: center;
+    max-width: 300px; /* Limitar el ancho de cada tarjeta */
+    padding: 20px;
+    background-color: #070707; /* Fondo oscuro para las tarjetas */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    opacity: 0; /* Inicialmente invisibles */
+    transform: translateX(100%); /* Fuera de la pantalla */
+}
+
+.personal-1.show, .personal-2.show {
+    animation: slideInFromRight 1s ease forwards; /* Activar la animación cuando se agregue la clase 'show' */
+}
+
+
+
+
+/* Parte del Contacto */
+
+.FormaContact {
+    background-image: url(images/fin.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.btn-2 {
+    display: inline-block;
+    padding: 11px 25px;
+    background-color: #D82E37;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-family: "Bebas Neue", cursive;
+    margin: 25px 0;
+    border: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.campo-1 {
+    margin-bottom: 15px;
+}
+
+.campo {
+    margin: 5px;
+    padding: 20px 15px;
+    width: 250px;
+    background-color: #0E0E0E;
+    border: 1px solid #CF2D3A;
+    outline: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+textarea {
+    width: 520px !important;
+}
+
+
+
+.FormaContact h2 {
+    font-size: 80px;
+    line-height: 100px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    transition: color 0.4s ease, transform 0.4s ease; /* Transición suave para color y escala */
+}
+
+.FormaContact h2:hover {
+    color: #CF2D3A; /* Cambia el color al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+.FormaContact h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #CF2D3A;
+    margin: 10px auto 0; /* Alineación centrada */
+    transition: width 0.4s ease;
+}
+
+.FormaContact h2:hover::after {
+    width: 120px; /* La línea se expande al pasar el cursor */
+}
+
+/* Quienes Somos */
+
+.somos {
+    display: flex;
+    justify-content: flex-start; /* Alinea el contenido hacia la izquierda */
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #1f1f1f;
+    padding: 50px;
+}
+
+.somos-1 {
+    width: 50%;
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.somos-1 h2 {
+    font-size: 80px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive;
+    margin-bottom: 20px;
+    position: relative;
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.somos-1 h2:hover {
+    color: #CF2D3A;
+    transform: scale(1.1);
+}
+
+.somos-1 h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #CF2D3A;
+    margin: 10px 0 0; /* Mueve la línea hacia la izquierda del texto */
+    transition: width 0.4s ease;
+}
+
+.somos-1 h2:hover::after {
+    width: 120px;
+}
+
+.somos-1 p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #BBBBBB;
+    margin-bottom: 30px;
+}
+
+.somos-2 {
+    background-image: url('images/fue.webp');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 50px; /* Añade espacio entre el texto y la imagen */
+}
+
+
+/* que hacemos */
+.quienes {
+    display: flex;
+    height: 100vh;
+}
+
+.quienes-1 {
+    background-image: url(images/fua.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+
+.quienes-2 {
+    width: 50%;
+    padding: 150px 100px;
+    background-color: #191919;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+}
+
+.quienes-2 h2 {
+    font-size: 90px;
+    line-height: 100px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive;
+    margin-bottom: 20px;
+    position: relative;
+    transition: color 0.4s ease, transform 0.4s ease; /* Transición suave para color y escala */
+}
+
+.quienes-2 h2:hover {
+    color: #CF2D3A; /* Cambia el color al pasar el cursor */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+.quienes-2 h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #CF2D3A;
+    margin: 10px 0 0;
+    transition: width 0.4s ease; /* Transición suave para la línea */
+}
+
+.quienes-2 h2:hover::after {
+    width: 120px; /* La línea se expande al pasar el cursor */
+}
+
+/* Nuestros Servicios */
+
+/* Que es la ciberseguridad Ofensiva */
+
+.cib {
+    display: flex;
+    height: 100vh; /* Ocupar toda la altura de la pantalla */
+}
+
+.cib-1 {
+    width: 50%;
+    padding: 100px; /* Ajuste del padding para mantener proporciones */
+    background-color: #1f1f1f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+}
+
+.cib-1 h2 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
+    transition: color 0.4s ease, transform 0.4s ease; /* Transición suave para el color y la escala */
+}
+
+.cib-1 h2:hover {
+    color: #CF2D3A; /* Cambia el color del título al pasar el cursor */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+.cib-1 h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #CF2D3A;
+    margin: 10px 0 0;
+    transition: width 0.4s ease; /* Transición suave para la línea */
+}
+
+.cib-1 h2:hover::after {
+    width: 120px; /* La línea se expande al pasar el cursor */
+}
+
+.cib-1 p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    color: #ccc;
+    text-align: left;
+}
+
+.cib-2 {
+    background-image: url('images/ofen2.webp'); /* Cambia la ruta de la imagen si es necesario */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    position: relative;
+}
+
+
+
+
+/* la ciberseguridad ofensiva vs la ciberseguridad Defensiva*/
+
+.ofe {
+    display: flex;
+    height: 100vh; /* Ocupar toda la altura de la pantalla */
+}
+
+.ofe-1 {
+    background-image: url('images/ofen3.webp');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    position: relative;
+    transition: transform 1s ease-in-out; /* Transición suave al cargar */
+}
+
+.ofe-2 {
+    width: 50%;
+    padding: 120px 100px; /* Ajuste del padding */
+    background-color: #191919;
+    
+    /* Centrando el contenido vertical y horizontalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden; /* Oculta el contenido desbordado para animaciones */
+    
+}
+
+.ofe-2 h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    position: relative;
+    transition: color 0.4s ease, transform 0.4s ease;
+ 
+}
+
+.ofe-2 h2:hover {
+    color: #CF2D3A; /* Cambia el color al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+.ofe-2 h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #CF2D3A;
+    margin: 10px auto 0;
+}
+
+
+
+.ofe-2 p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ccc;
+    max-width: 600px;
+    
+    
+}
+
+
+
+
+/* Servicio 2.0 */
+
+.serv {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #1f1f1f;
+}
+
+.serv-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.serv-txt h2 {
+    font-size: 60px;
+    line-height: 80px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    transition: color 0.4s ease, transform 0.4s ease; /* Transición suave para color y escala */
+}
+
+.serv-txt h2:hover {
+    color: #CF2D3A; /* Cambia el color al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+hr {
+    border: 1px solid #CF2D3A;
+    width: 50px;
+    margin: 10px 0;
+}
+
+.serv-txt p {
+    padding: 20px 100px;
+    color: #ccc;
+}
+
+.serv-group {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.serv-1 {
+    background-color: #070707;
+    padding: 25px 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    opacity: 0; /* Inicialmente invisibles */
+    transform: translateX(-200px); /* Desplazar más hacia la izquierda */
+}
+
+.serv-1.show {
+    opacity: 1;
+    transform: translateX(0); /* Posición normal al aparecer */
+    transition: transform 1s ease, opacity 1s ease; /* Transición más lenta */
+}
+
+.serv-1:hover {
+    transform: scale(1.05); /* Efecto de zoom */
+}
+
+.serv-1 img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.serv-1 h3 {
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.serv-1 p {
+    color: #bbb;
+    font-size: 14px;
+}
+
+.serv-1 a {
+    color: #CF2D3A;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* Agregar la animación */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-5000px); /* Desplazar desde más lejos a la izquierda */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Posición final */
+    }
+}
+
+/* Parte del Sobre Nosotros */
+
+.contact {
+    display: flex;
+}
+
+.contact-1 {
+    width: 50%;
+    padding: 80px 50px;
+    background-color: #191919;
+    color: #ffffff;
+}
+.contact-1 h2 {
+    font-size: 90px;
+    line-height: 100px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive;
+    margin-bottom: 20px;
+    position: relative;
+    transition: color 0.4s ease, transform 0.4s ease; /* Transición suave para color y escala */
+}
+
+.contact-1 h2:hover {
+    color: #CF2D3A; /* Cambia el color al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+.contact-1 h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #CF2D3A;
+    margin-top: 10px;
+    /* Alineación a la izquierda */
+    position: absolute;
+    left: 0;
+    transition: width 0.4s ease;
+}
+
+.contact-1 h2:hover::after {
+    width: 120px; /* La línea se expande al pasar el cursor */
+}
+
+.contact-1 p {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+.contact-1 button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #CF2D3A;
+    border: 1px solid #CF2D3A;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+
+.b2 {
+    
+    font-size: 20px;
+    color: #CF2D3A;
+    padding: 5px 10px;
+    border: 1px solid #CF2D3A; /* Borde rojo alrededor */
+    display: inline-block;
+    margin-bottom: 20px;
+   position: relative;
+    transition: background-color 0.4s ease, color 0.4s ease; /* Transición suave para el color y el fondo */
+}
+
+.b2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #CF2D3A;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease, opacity 0.4s ease; /* Efecto de subrayado al hover */
+}
+
+.b2:hover {
+    background-color: #CF2D3A;
+    color: #191919; /* Texto cambia a oscuro al pasar el cursor */
+}
+
+.b2:hover::after {
+    transform: scaleX(1);
+    opacity: 1; /* Efecto de subrayado completo */
+}
+
+
+.contact-1 ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.contact-1 ul li {
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 0;
+    border-bottom: 1px solid #AFAFAF;
+}
+
+.contact-2 {
+    background-image: url('images/cont.webp'); /* Ruta de la imagen de fondo */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+}
+
+.contact-2 img {
+    width: 70%;
+    max-width: 400px;
+}
+
+.FormaContact h2 {
+    font-size: 80px;
+    line-height: 100px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", cursive;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    transition: color 0.4s ease, transform 0.4s ease; /* Transición suave para color y escala */
+}
+
+.FormaContact h2:hover {
+    color: #CF2D3A; /* Cambia el color al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+.FormaContact h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #CF2D3A;
+    margin: 10px auto 0; /* Alineación centrada */
+    transition: width 0.4s ease;
+}
+
+.FormaContact h2:hover::after {
+    width: 120px; /* La línea se expande al pasar el cursor */
+}
+
+
+
+
+/* New Footer*/
+
+
+.footer-bg {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 50px 20px;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #CF2D3A; /* Cambia a rojo al pasar el ratón */
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+    color: #aaa;
+}
+
+
+
