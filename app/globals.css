@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: 210 40% 98%;
+  --background: 222 47% 11%;
+
+  --card: 222 47% 11%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222 47% 11%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 355 70% 50%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 162 100% 44%;
+  --secondary-foreground: 222 47% 11%;
+
+  --accent: 250 91% 66%;
+  --accent-foreground: 210 40% 98%;
+
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217 33% 17%;
+  --input: 217 33% 17%;
+  --ring: 355 70% 50%;
+
+  --radius: 0.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-darker text-foreground;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: linear-gradient(to bottom right, #020617, #0f172a, #0f172a80);
+  }
+
+  .terminal {
+    @apply font-mono border-l-2 border-offensive;
+  }
+
+  .nav-link {
+    @apply relative hover:text-white transition-colors;
+  }
+
+  .nav-link::after {
+    @apply absolute w-0 h-0.5 bg-offensive left-0 -bottom-0.5 transition-all duration-300;
+    content: "";
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .service-card {
+    @apply bg-darker border border-gray-800 rounded-lg p-8 transition-all duration-300 hover:border-offensive;
+  }
+
+  .terminal-cursor {
+    @apply border-r-2 border-offensive animate-blink-caret;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl font-bold mb-4;
+  }
+
+  .section-description {
+    @apply text-xl text-gray-300 max-w-3xl mx-auto;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #cf2d3a;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-typing {
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
