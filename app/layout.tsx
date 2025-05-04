@@ -1,4 +1,3 @@
-// ✅ Archivo: layout.tsx (CSP reforzado, reCAPTCHA v3, seguro y listo para producción)
 import type React from "react";
 import type { Metadata } from "next";
 import { Inter, Fira_Code } from "next/font/google";
@@ -35,13 +34,13 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        {/* ✅ Meta tags de seguridad */}
+        {/* ✅ Cabeceras de seguridad */}
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta httpEquiv="X-Frame-Options" content="DENY" />
         <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-        {/* ✅ Política CSP robusta (reCAPTCHA v3 + Formspree habilitados) */}
+        {/* ✅ Política CSP reforzada */}
         <meta
           httpEquiv="Content-Security-Policy"
           content="
@@ -55,14 +54,16 @@ export default function RootLayout({
           "
         />
 
-        {/* ✅ Script reCAPTCHA v3 */}
+        {/* ✅ reCAPTCHA v3 (modo render directo) */}
         <script
           src="https://www.google.com/recaptcha/api.js?render=6LcnyiQrAAAAAOMZji4M1EHoV27cknXX4DkuEC1k"
           async
           defer
         ></script>
       </head>
-      <body className={`${inter.variable} ${firaCode.variable} bg-darker text-gray-200 font-sans`}>
+      <body
+        className={`${inter.variable} ${firaCode.variable} bg-darker text-gray-200 font-sans`}
+      >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <div className="flex flex-col min-h-screen">
             <Header />
