@@ -1,60 +1,18 @@
-import { z } from "zod"
+import * as z from "zod";
 
-// Esquema de validación para el formulario de contacto
+// Define el esquema de validación con Zod
 export const contactFormSchema = z.object({
-  name: z.string().min(2, {
-    message: "El nombre debe tener al menos 2 caracteres.",
-  }),
-  email: z.string().email({
-    message: "Por favor ingrese un correo electrónico válido.",
-  }),
+  name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres." }),
+  email: z.string().email({ message: "Por favor, introduzca una dirección de correo válida." }),
   company: z.string().optional(),
-  service: z.string().optional(),
-  message: z.string().min(10, {
-    message: "El mensaje debe tener al menos 10 caracteres.",
-  }),
-})
+  message: z.string().min(5, { message: "El mensaje debe tener al menos 5 caracteres." }),
+});
 
-export type ContactFormValues = z.infer<typeof contactFormSchema>
+// Define el tipo para los valores del formulario
+export type ContactFormValues = z.infer<typeof contactFormSchema>;
 
-// Esquema de validación para el formulario de diagnóstico
-export const diagnosticFormSchema = z.object({
-  fullName: z.string().min(2, {
-    message: "El nombre completo debe tener al menos 2 caracteres.",
-  }),
-  company: z.string().min(2, {
-    message: "El nombre de la empresa es requerido.",
-  }),
-  email: z.string().email({
-    message: "Por favor ingrese un correo electrónico válido.",
-  }),
-  position: z.string().min(2, {
-    message: "El cargo/posición es requerido.",
-  }),
-  consent: z.boolean().refine((val) => val === true, {
-    message: "Debe aceptar los términos y condiciones.",
-  }),
-})
-
-export type DiagnosticFormValues = z.infer<typeof diagnosticFormSchema>
-
-// Esquema para las preguntas de diagnóstico
-export const diagnosticQuestionSchema = z.object({
-  riskManagement: z.number().min(1).max(5),
-  secureAccess: z.number().min(1).max(5),
-  dataProtection: z.number().min(1).max(5),
-  incidentResponse: z.number().min(1).max(5),
-  secureDevelopment: z.number().min(1).max(5),
-  assetManagement: z.number().min(1).max(5),
-  securityAwareness: z.number().min(1).max(5),
-  thirdPartyRisk: z.number().min(1).max(5),
-})
-
-export type DiagnosticQuestionValues = z.infer<typeof diagnosticQuestionSchema>
-
-// Función para sanitizar texto de entrada
-export function sanitizeInput(input: string): string {
-  // Eliminar etiquetas HTML y caracteres especiales
+// Función para sanitizar entradas
+function sanitizeInput(input: string): string {
   return input
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
@@ -76,7 +34,6 @@ export function validateAndSanitizeContactForm(data: any): {
       name: sanitizeInput(data.name || ""),
       email: sanitizeInput(data.email || ""),
       company: data.company ? sanitizeInput(data.company) : undefined,
-      service: data.service ? sanitizeInput(data.service) : undefined,
       message: sanitizeInput(data.message || ""),
     }
 
@@ -89,16 +46,19 @@ export function validateAndSanitizeContactForm(data: any): {
     }
   } catch (error) {
     if (error instanceof z.ZodError) {
+      const filteredErrors = Object.fromEntries(
+        Object.entries(error.flatten().fieldErrors).filter(([, value]) => value !== undefined)
+      ) as Record<string, string[]>;
       return {
         isValid: false,
-        errors: error.flatten().fieldErrors,
+        errors: filteredErrors,
       }
     }
     return {
-      isValid: false,
-      errors: {
-        general: ["Ocurrió un error al procesar el formulario."],
-      },
-    }
+     isValid: false,
+     errors: {
+       general: ["Ocurrió un error al procesar el formulario."],
+     },
+   }
   }
 }
