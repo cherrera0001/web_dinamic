@@ -1,4 +1,4 @@
-// ✅ Archivo: layout.tsx (reforzado con CSP, reCAPTCHA v3 y mejoras de seguridad)
+// ✅ Archivo: layout.tsx (CSP reforzado, reCAPTCHA v3, seguro y listo para producción)
 import type React from "react";
 import type { Metadata } from "next";
 import { Inter, Fira_Code } from "next/font/google";
@@ -35,7 +35,13 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        {/* Meta tags de seguridad (actualizados con CSP robusto) */}
+        {/* ✅ Meta tags de seguridad */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+        {/* ✅ Política CSP robusta (reCAPTCHA v3 + Formspree habilitados) */}
         <meta
           httpEquiv="Content-Security-Policy"
           content="
@@ -45,14 +51,11 @@ export default function RootLayout({
             img-src 'self' data: https:;
             font-src 'self' https://fonts.gstatic.com;
             connect-src 'self' https://formspree.io https://www.google.com https://www.gstatic.com;
+            frame-src https://www.google.com;
           "
         />
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="X-Frame-Options" content="DENY" />
-        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-        <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-        {/* Script reCAPTCHA v3 */}
+        {/* ✅ Script reCAPTCHA v3 */}
         <script
           src="https://www.google.com/recaptcha/api.js?render=6LcnyiQrAAAAAOMZji4M1EHoV27cknXX4DkuEC1k"
           async
