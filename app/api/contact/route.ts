@@ -2,76 +2,63 @@ import { type NextRequest, NextResponse } from "next/server";
 import { validateAndSanitizeContactForm } from "@/lib/validation";
 import { verifyOrigin, checkRateLimit, verifyRecaptcha, setSecurityHeaders } from "@/lib/security";
 
+// ✅ Función principal de manejo de solicitudes POST
 export async function POST(request: NextRequest) {
   const headers = new Headers();
   await setSecurityHeaders(headers);
 
   try {
-    // ✅ Verificar origen de la solicitud
+    // ✅ Verificar origen de la solicitud (Más seguro y configurable)
     if (!verifyOrigin(request)) {
-      return NextResponse.json(
-        { error: "🚫 Origen no permitido." },
-        { status: 403, headers }
-      );
+      return errorResponse("🚫 Origen no permitido.", 403, headers);
     }
 
-    // ✅ Verificar límite de tasa (Rate limiting)
-    const ip = request.headers.get("x-forwarded-for") || request.ip || "unknown";
+    // ✅ Verificar límite de tasa (Rate limiting) (Control por IP, seguro)
+    const ip = getClientIP(request);
     if (!checkRateLimit(ip)) {
-      return NextResponse.json(
-        { error: "🚫 Demasiadas solicitudes. Por favor, inténtelo más tarde." },
-        { status: 429, headers }
-      );
+      return errorResponse("🚫 Demasiadas solicitudes. Por favor, inténtelo más tarde.", 429, headers);
     }
 
-    // ✅ Obtener y validar datos del formulario
+    // ✅ Obtener y validar datos del formulario (Verificación robusta)
     const formData = await request.json();
-    if (!formData) {
-      return NextResponse.json(
-        { error: "🚫 Datos del formulario no proporcionados." },
-        { status: 400, headers }
-      );
+    if (!formData || typeof formData !== "object") {
+      return errorResponse("🚫 Datos del formulario no proporcionados o inválidos.", 400, headers);
     }
 
-    // ✅ Verificar reCAPTCHA (Obligatorio)
-    if (!formData["g-recaptcha-response"]) {
-      return NextResponse.json(
-        { error: "🚫 reCAPTCHA no proporcionado." },
-        { status: 400, headers }
-      );
+    // ✅ Verificar reCAPTCHA (Obligatorio y seguro)
+    const recaptchaToken = formData["g-recaptcha-response"];
+    if (!recaptchaToken) {
+      return errorResponse("🚫 reCAPTCHA no proporcionado.", 400, headers);
     }
 
-    const isValidRecaptcha = await verifyRecaptcha(formData["g-recaptcha-response"]);
+    const isValidRecaptcha = await verifyRecaptcha(recaptchaToken);
     if (!isValidRecaptcha) {
-      return NextResponse.json(
-        { error: "🚫 Verificación de reCAPTCHA fallida." },
-        { status: 400, headers }
-      );
+      return errorResponse("🚫 Verificación de reCAPTCHA fallida.", 400, headers);
     }
 
     // ✅ Validar y sanitizar datos del formulario
     const { isValid, sanitizedData, errors } = validateAndSanitizeContactForm(formData);
 
     if (!isValid || !sanitizedData) {
-      return NextResponse.json(
-        { 
-          error: "🚫 Datos de formulario inválidos.", 
-          details: errors 
-        },
-        { status: 400, headers }
+      return errorResponse(
+        "🚫 Datos de formulario inválidos.",
+        400,
+        headers,
+        { details: errors }
       );
     }
 
     // ✅ Proceso exitoso (Enviar correo, guardar en DB, etc.)
-    // Puedes reemplazar esto con tu lógica (por ejemplo, enviar correo con nodemailer)
     console.log("📧 Formulario recibido:", sanitizedData);
 
-    return NextResponse.json(
-      {
-        success: true,
-        message: "✅ Mensaje enviado con éxito.",
-      },
-      { status: 200, headers }
+    // ✅ Aquí puedes integrar tu lógica de envío de correos o almacenamiento
+    // Por ejemplo: await sendEmail(sanitizedData);
+    // await saveToDatabase(sanitizedData);
+
+    return successResponse(
+      "✅ Mensaje enviado con éxito.",
+      sanitizedData,
+      headers
     );
 
   } catch (error) {
@@ -80,12 +67,52 @@ export async function POST(request: NextRequest) {
       stack: (error as Error).stack,
     });
 
-    return NextResponse.json(
-      {
-        error: "🚨 Error interno del servidor. Por favor, intente nuevamente.",
-        details: (error as Error).message,
-      },
-      { status: 500, headers }
+    return errorResponse(
+      "🚨 Error interno del servidor. Por favor, intente nuevamente.",
+      500,
+      headers,
+      { details: (error as Error).message }
     );
   }
+}
+
+// ✅ Función para obtener la IP del cliente (más robusta y segura)
+function getClientIP(request: NextRequest): string {
+  return (
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || // Verificar proxy
+    request.ip || // Fallback al IP original
+    "unknown"
+  );
+}
+
+// ✅ Función de respuesta de error estandarizada
+function errorResponse(
+  message: string,
+  status: number,
+  headers: Headers,
+  extra?: Record<string, any>
+) {
+  return NextResponse.json(
+    {
+      error: message,
+      ...extra,
+    },
+    { status, headers }
+  );
+}
+
+// ✅ Función de respuesta de éxito estandarizada
+function successResponse(
+  message: string,
+  data: Record<string, any>,
+  headers: Headers
+) {
+  return NextResponse.json(
+    {
+      success: true,
+      message,
+      data,
+    },
+    { status: 200, headers }
+  );
 }
